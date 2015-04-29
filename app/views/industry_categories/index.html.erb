@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Industry Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @industry_categories.each do |industry_category| %>
+      <tr>
+        <td><%= industry_category.name %></td>
+        <td><%= industry_category.description %></td>
+        <td><%= industry_category.parent_id %></td>
+        <td><%= link_to 'Show', industry_category %></td>
+        <td><%= link_to 'Edit', edit_industry_category_path(industry_category) %></td>
+        <td><%= link_to 'Destroy', industry_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Industry category', new_industry_category_path %>
+<div class="industory_categories_maindiv">
+	
+</div>
