@@ -26,3 +26,22 @@
     position: absolute;
     top: 48%;
 }
+
+
+
+.Main_content_div{
+	width: 100%;
+	text-align: center;
+}
+
+
+/*
+	industory_categories css
+*/
+
+.industory_categories_maindiv{
+	width: 80%;
+	height: 500px;
+	background: #3079ed;
+	
+}
