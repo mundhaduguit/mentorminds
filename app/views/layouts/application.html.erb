@@ -11,45 +11,42 @@
   <%= image_tag("preloader.gif", :alt => "Preloader") %>
 </div>
 <header id="navigation" class="navbar-fixed-top navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- responsive nav button -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars fa-2x"></i>
-                </button>
-				<!-- /responsive nav button -->
-				
-				<!-- logo -->
-                <a class="navbar-brand" href="#body">
-					<h1 id="logo">
-					</h1>
-				</a>
-				<!-- /logo -->
-            </div>
-            
-			<!-- main nav -->
-            <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                <ul id="nav" class="nav navbar-nav">
-                    <li class="current"><a href="#body">Sign In</a></li>
-                    <li><a href="#features">About</a></li>
-                    <li><a href="#works">Industries</a></li>
-                    <li><a href="#team">What we Give</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-			<!-- /main nav -->
-			
-        </div>
-    </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
-		<div class="clear"></div>
-		<div class="Main_content_div">
-			<%= yield %>
-		</div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- responsive nav button -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+      <!-- /responsive nav button -->
 
-
+      <!-- logo -->
+      <a class="navbar-brand" href="#body">
+      	<h1 id="logo">
+      	</h1>
+      </a>
+      <!-- /logo -->
+    </div>
+      
+    <!-- main nav -->
+    <nav class="collapse navbar-collapse navbar-right" role="navigation">
+      <ul id="nav" class="nav navbar-nav">
+          <li class="current"><a href="#body">Sign In</a></li>
+          <li><a href="#features">About</a></li>
+          <li><a href="#works">Industries</a></li>
+          <li><a href="#team">What we Give</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  <!-- /main nav -->
+  </div>
+</header>
+<!--
+End Fixed Navigation
+==================================== -->
+<div class="clear"></div>
+  <div class="Main_content_div">
+  <%= yield %>
+  </div>
 </body>
 </html>
