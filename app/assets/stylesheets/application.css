@@ -32,6 +32,11 @@
 .Main_content_div{
 	width: 100%;
 	text-align: center;
+	/*margin-top: 60px;*/
+}
+
+.each-part-container{
+	min-height: 700px;
 }
 
 
