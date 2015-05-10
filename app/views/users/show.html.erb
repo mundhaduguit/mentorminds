@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-4">
+    </div>
+  <div class="col-md-4">
+    <%= image_tag @user.image.url(:medium), class: "img-circle",:height=>"200",:width=>"200", :style =>"border:solid; border-color:#006dcc;" %>
+    <div class="form-group col-md-12">
+        <div class="form-control">
+          <label>Email</label>
+          <%= @user.email %>
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Collage</label>
+        <%= @user.collage %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Name</label>
+        <%= @user.user_name %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Course</label>
+        <%= @user.course %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Name</label>
+        <%= @user.course %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Date Of Birth</label>
+        <%= @user.date_of_birth %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="form-control">
+        <label>Gender</label>
+        <%= @user.gender %>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div >
+        <%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <!--
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+-->

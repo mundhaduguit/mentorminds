@@ -44,7 +44,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+  gem 'acts_as_tree'
   #ruby "2.1.5"
 end
 
