@@ -69,6 +69,6 @@ class IndustryCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def industry_category_params
-      params.require(:industry_category).permit(:name, :description, :parent_id)
+      params.require(:industry_category).permit(:name, :description, :parent_id, :image)
     end
 end

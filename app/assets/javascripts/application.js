@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require pizza
 //= require turbolinks
 //= require_tree .
 
 $(document).ready(function(){
-
+    Pizza.init();
     $("#preloader").fadeOut("slow");
 });

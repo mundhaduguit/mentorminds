@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require pizza
- *= require_tree .
+ *= require bootstrap.min.css
  *= require_self
  */
 #preloader {

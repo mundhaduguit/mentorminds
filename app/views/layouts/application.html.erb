@@ -20,7 +20,7 @@
 		
 		<!-- Google Font -->
 		
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>-->
 
   
   <!-- CSS
@@ -39,8 +39,8 @@
         <!--<link rel="stylesheet" href="css/media-queries.css">-->
 
 		<!-- Modernizer Script for old Browsers -->
-        <script src="js/modernizr-2.6.2.min.js"></script>
-  
+        <!--<script src="js/modernizr-2.6.2.min.js"></script>
+  -->
   
   
   
@@ -74,7 +74,11 @@
     <!-- main nav -->
     <nav class="collapse navbar-collapse navbar-right" role="navigation">
       <ul id="nav" class="nav navbar-nav">
-          <li class="current"><a href="#body">Sign In</a></li>
+          <li class="current"><% if user_signed_in? %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+            <% else %>
+                <a> Login</a>
+            <% end %></li></li>
           <li><a href="#features">About</a></li>
           <li><a href="#works">Industries</a></li>
           <li><a href="#team">What we Give</a></li>

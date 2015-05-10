@@ -1,5 +1,4 @@
 class IndustriesController < ApplicationController
-  before_action :set_industry, only: [:show, :edit, :update, :destroy]
 
   # GET /industries
   # GET /industries.json
@@ -10,6 +9,7 @@ class IndustriesController < ApplicationController
   # GET /industries/1
   # GET /industries/1.json
   def show
+    set_industry
   end
 
   # GET /industries/new

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>
 
 <h1>Listing Industry Categories</h1>
 
@@ -26,9 +26,26 @@
   </tbody>
 </table>
 
-<br>
+<br>-->
 
 <%= link_to 'New Industry category', new_industry_category_path %>
-<div class="industory_categories_maindiv">
+<!--<div class="industory_categories_maindiv">
 	
+</div>-->
+<style>
+    .circle-border {width:199px; height:199px; border-radius:100px; -moz-border-radius: 100px; -webkit-border-radius: 100px; -khtml-border-radius: 100px; font-size:20px; color:#fff; line-height:200px; text-align:center; background:#000; border: 1px solid #999; }
+</style>
+<br>
+<br>
+<br>
+<div class="row">
+  <% @industry_categories.each do |industry_category| %>
+
+      <div class="col-md-3">
+        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
+        <%= industry_category.name %>
+        <td><%= link_to 'Show', industry_category %></td>
+      </div>
+
+  <% end %>
 </div>
