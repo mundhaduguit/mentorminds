@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-    Pizza.init();
-    $("#preloader").fadeOut("slow");
+
+
+
 });
