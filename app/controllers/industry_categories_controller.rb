@@ -4,12 +4,13 @@ class IndustryCategoriesController < ApplicationController
   # GET /industry_categories
   # GET /industry_categories.json
   def index
-    @industry_categories = IndustryCategory.all
+    @industry_categories = IndustryCategory.where("parent_id = ?", 0)
   end
 
   # GET /industry_categories/1
   # GET /industry_categories/1.json
   def show
+    @industry_sub_categories = IndustryCategory.where("parent_id = ?", params[:id])
   end
 
   # GET /industry_categories/new

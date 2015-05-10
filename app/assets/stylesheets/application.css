@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require pizza
  *= require bootstrap.min.css
  *= require_self
  */
@@ -50,4 +49,39 @@
 	height: 500px;
 	background: #3079ed;
 	
+}
+
+.industory_categories_div{
+	margin: 0 auto;
+	width: 80%;
+	background: #337ab7;
+	text-align: left;
+	padding: 20px;
+}
+
+.industory_category_div{
+	background: #FFFFFF;
+	height: 200px;
+	width: 23%;
+	float: left;
+	margin: 5px;
+}
+.ic_left{
+	width: 49%;
+	height:150px;
+	line-height: 150px;
+	float: left;
+}
+.ic_img_right{
+	width: 50%;
+	height:150px;
+	float: left;
+}
+
+.ic_companies{
+	float: left;
+	width: 90%;
+	text-align: center;
+	border-style: solid;
+    border-width: 2px;
 }

@@ -3,13 +3,15 @@ class IndustriesController < ApplicationController
   # GET /industries
   # GET /industries.json
   def index
-    @industries = Industry.all
+    #@industries = Industry.all
+    @industries = Industry.where("industry_category_is = ?", params[:id])
   end
 
   # GET /industries/1
   # GET /industries/1.json
   def show
     set_industry
+    
   end
 
   # GET /industries/new

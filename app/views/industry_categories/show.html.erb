@@ -23,3 +23,50 @@
 <%= link_to 'Edit', edit_industry_category_path(@industry_category) %> |
 <%= link_to 'Back', industry_categories_path %>
 -->
+
+
+<div class="item active background_top" style="background-image: url(/assets/home.jpg); height: 180px">		  
+</div>
+<div class="industory_categories_div">
+	<%= link_to 'New Industry sub category', new_industry_category_path, :style => "font-size: -webkit-xxx-large; color: white;" %>
+	<!--<div class="industory_categories_maindiv">
+		
+	</div>-->
+	<style>
+	    .circle-border {width:199px; height:199px; border-radius:100px; -moz-border-radius: 100px; -webkit-border-radius: 100px; -khtml-border-radius: 100px; font-size:20px; color:#fff; line-height:200px; text-align:center; background:#000; border: 1px solid #999; }
+	</style>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+	  <% @industry_sub_categories.each do |industry_category| %>
+		<a href=<%= industries_path(industry_category) %>>
+			<div class="industory_category_div">
+		      <div class="ic_left">
+		      	<%= industry_category.name %>
+		      </div>
+		      <div class="ic_img_right">
+		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
+		      </div>
+		      
+		      <% @companies = industry_category.industries %>
+			  <div class="ic_companies">
+				<% @companies.each do |company| %>
+					<%= company.name%>
+				<%end%>
+		      </div>
+		      <!--<div class="col-md-3">
+		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
+		        <%= industry_category.name %>
+		        <td><%= link_to 'Show', industry_category %></td>
+		      </div>-->
+			</div>
+			
+		</a>
+		
+		
+		
+		
+	  <% end %>
+	</div>
+</div>
