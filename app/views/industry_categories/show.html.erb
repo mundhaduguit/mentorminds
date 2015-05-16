@@ -40,7 +40,7 @@
 	<br>
 	<div class="row">
 	  <% @industry_sub_categories.each do |industry_category| %>
-		<a href=<%= industries_path(industry_category) %>>
+
 			<div class="industory_category_div">
 		      <div class="ic_left">
 		      	<%= industry_category.name %>
@@ -50,21 +50,27 @@
 		      </div>
 		      
 		      <% @companies = industry_category.industries %>
-			  <div class="ic_companies">
-				<% @companies.each do |company| %>
-					<%= company.name%>
-				<%end%>
-		      </div>
+
 		      <!--<div class="col-md-3">
 		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
 		        <%= industry_category.name %>
 		        <td><%= link_to 'Show', industry_category %></td>
 		      </div>-->
-			</div>
+              <% if @companies.present? %>
+
+                    <% @companies.each do |company| %>
+                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" onclick="alert(hai)">
+                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                    <%end%>
+              <%end %>
+
+            </div>
 			
-		</a>
-		
-		
+
+
 		
 		
 	  <% end %>

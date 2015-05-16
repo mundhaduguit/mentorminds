@@ -1,0 +1,26 @@
+<%= form_for(@pre_challenge) do |f| %>
+  <% if @pre_challenge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pre_challenge.errors.count, "error") %> prohibited this pre_challenge from being saved:</h2>
+
+      <ul>
+      <% @pre_challenge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :industry %><br>
+      <%= f.select :industry_id, Industry.pluck(:name, :id),{} %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

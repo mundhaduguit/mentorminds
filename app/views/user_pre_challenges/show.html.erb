@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_pre_challenge.user_id %>
+</p>
+
+<p>
+  <strong>Pre challenge:</strong>
+  <%= @user_pre_challenge.pre_challenge_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_pre_challenge_path(@user_pre_challenge) %> |
+<%= link_to 'Back', user_pre_challenges_path %>

@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :pre_challenges, through: :user_pre_challenges
+  has_many :user_pre_challenges
+
 end
