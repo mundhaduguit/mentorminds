@@ -3,4 +3,9 @@ class Industry < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   belongs_to :industry
   has_one :industry_category
+  belongs_to :challenge
+  has_many :challenges
+  has_many :pre_challenges
+  belongs_to :pre_challenge
+  scope  :get_all_industry_names_to_select, ->{ pluck(:name, :id) }
 end

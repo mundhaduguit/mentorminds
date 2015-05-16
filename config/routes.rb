@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :user_pre_challenges
+  resources :pre_challenges
+  resources :user_challenges
   resources :pictures
   resources :users
   resources :industries
   resources :industry_categories
-  resources :challenges
+  resources :challenges do
+   collection do
+    get "student_challenges"
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

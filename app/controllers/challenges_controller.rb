@@ -4,7 +4,7 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge.where(:industry_id => params[:company_id])
   end
 
   # GET /challenges/1
@@ -70,6 +70,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:question, :answer)
+      params.require(:challenge).permit(:question, :answer, :industry_id)
     end
 end

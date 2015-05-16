@@ -12,7 +12,9 @@ class IndustryCategoriesController < ApplicationController
   def show
     @industry_sub_categories = IndustryCategory.where("parent_id = ?", params[:id])
   end
+  def get_company_challenges
 
+  end
   # GET /industry_categories/new
   def new
     @industry_category = IndustryCategory.new
