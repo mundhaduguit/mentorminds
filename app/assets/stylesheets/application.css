@@ -13,6 +13,14 @@
  *= require bootstrap.min.css
  *= require_self
  */
+ * {
+    border: 0 none;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
 #preloader {
     background-color: #fff;
     height: 100%;
@@ -29,10 +37,8 @@
 
 
 
-.Main_content_div{
+.main_content_div{
 	width: 100%;
-	text-align: center;
-	/*margin-top: 60px;*/
 }
 
 .each-part-container{
@@ -85,4 +91,8 @@
 	text-align: center;
 	border-style: solid;
     border-width: 2px;
+}
+
+.text-align-center{
+  text-align: center;
 }

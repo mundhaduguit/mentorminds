@@ -6,8 +6,8 @@
 body {
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
-    line-height: 21px;
-	font-size: 13px;
+    line-height: 20px;
+	font-size: 14px;
     color: #6a737b;
 }
 
@@ -723,3 +723,4 @@ label.error {
   right: 25px;
   z-index: 9;
 }
+
