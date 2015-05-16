@@ -40,15 +40,16 @@
 	<br>
 	<div class="row">
 	  <% @industry_sub_categories.each do |industry_category| %>
-
-			<div class="industory_category_div">
+		<div class="industory_categories_and_companies">
+			<div class="industory_category_div" onclick="show_companies(<%=industry_category.id %>);">
 		      <div class="ic_left">
 		      	<%= industry_category.name %>
 		      </div>
 		      <div class="ic_img_right">
 		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
 		      </div>
-		      
+		    </div>  
+		      <div class="clear"></div>
 		      <% @companies = industry_category.industries %>
 
 		      <!--<div class="col-md-3">
@@ -56,18 +57,24 @@
 		        <%= industry_category.name %>
 		        <td><%= link_to 'Show', industry_category %></td>
 		      </div>-->
-              <% if @companies.present? %>
+              <div class="companies_dispaly_div" id="companies_list_<%=industry_category.id %>">
+	              <% if @companies.present? %>
+					
+	                    <% @companies.each do |company| %>
+	                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" onclick="alert(hai)">
+	                            <div class="image_company">
+	                            	<%= image_tag company.image.url(:medium), class: "img-rounded" %>
+	                            </div>
+	                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
+	                        </div>
+	                        
+	                    <%end%>
+	                	<div class="clearfix"></div>
+	              <%end %>
+	          </div>
+	       </div>   
 
-                    <% @companies.each do |company| %>
-                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" onclick="alert(hai)">
-                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                    <%end%>
-              <%end %>
-
-            </div>
+            
 			
 
 

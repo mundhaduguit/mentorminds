@@ -20,3 +20,9 @@ $(document).ready(function(){
 
 
 });
+
+function show_companies(category_id){
+	//alert(category_id);
+	$(".companies_dispaly_div").hide();
+	$("#companies_list_"+category_id).show();
+}
