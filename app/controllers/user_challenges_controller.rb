@@ -4,8 +4,7 @@ class UserChallengesController < ApplicationController
   # GET /user_challenges
   # GET /user_challenges.json
   def index
-    @user_challenges = UserChallenge.all
-
+    @user_challenges = Challenge.where(:pre_challenge_id => params[:pre_challenge_id])
   end
 
   # GET /user_challenges/1

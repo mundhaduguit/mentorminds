@@ -24,8 +24,8 @@
           <%= f.text_area :answer, class: 'form-control ' %>
         </div>
         <div class="form-group col-md-12">
-          <%= f.label :industry %><br>
-          <%= f.select :industry_id, Industry.get_all_industry_names_to_select,{} %>
+          <%= f.label :pre_challenge %><br>
+          <%= f.select :pre_challenge_id, PreChallenge.all.pluck(:name,:id),{} %>
         </div>
       <div class="actions">
         <%= f.submit :class=>"btn btn-primary" %>
