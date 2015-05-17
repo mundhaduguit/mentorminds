@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :pre_challenges, through: :user_pre_challenges
   has_many :user_pre_challenges
-
+  has_many :challenges, :through => :user_challenges
+  has_many :user_challenges
 end

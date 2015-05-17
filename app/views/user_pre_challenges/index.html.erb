@@ -14,7 +14,7 @@
         <div class="clearfix"></div>
         <div class="row">
           <div class="col-xs-4" style="background-color: #0feb9e">
-            <%=link_to pre_challenge.name, user_challenges_path%>
+            <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
           </div>
         </div>
     <% end %>

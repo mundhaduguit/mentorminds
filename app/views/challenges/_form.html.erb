@@ -21,7 +21,7 @@
   </div>
     <div class="field">
       <%= f.label :industry %><br>
-      <%= f.select :industry_id, Industry.get_all_industry_names_to_select,{} %>
+      <%= f.select :pre_challenge_id, PreChallenge.all.pluck(:name,:id),{} %>
     </div>
     <br>
   <div class="actions">
