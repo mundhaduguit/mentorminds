@@ -76,7 +76,9 @@
       <ul id="nav" class="nav navbar-nav">
         <% if user_signed_in? %>
           <li class="current"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-          <li><a href="#team"></a></li>
+          <!-- <li><a href="#team"></a></li> -->
+          <li><a href="<%= progress_user_challenges_path %>">Progress</a></li>
+          <li><a href="<%= leader_board_user_challenges_path %>">Leader Board</a></li>
           <li><a href="<%= industry_categories_path %>">Industries</a></li>
           <li><a href="#team">What we Give</a></li>
           <li><a href="#contact">Contact</a></li>

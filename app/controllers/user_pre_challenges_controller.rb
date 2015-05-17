@@ -6,7 +6,7 @@ class UserPreChallengesController < ApplicationController
   def index
     @user_pre_challenges = UserPreChallenge.all
     @pre_challenges = PreChallenge.where(:industry_id => params[:company_id].to_i)
-
+    @industry = Industry.find(params[:company_id])
   end
 
   # GET /user_pre_challenges/1
