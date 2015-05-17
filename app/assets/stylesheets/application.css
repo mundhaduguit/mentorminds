@@ -117,3 +117,123 @@
 	width: 100%;
 	display: inline-flex;
 }
+
+/*
+	process page css
+*/
+
+.progress_main_div{
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	padding: 20px;
+	/*
+	border-style: solid;
+		border-width: 2px;*/
+	
+}
+
+.progress_top{
+	
+	height:100px;
+	width:100%;
+	color: #337ab7;
+	
+}
+.circle_div{
+	height: 60px;
+	width: 60px;
+	border-radius:30px;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: 20px;
+	float: left;
+	background-image: url("flower.jpg")
+}
+.small_circle_div{
+	height: 30px;
+	width: 30px;
+	border-radius:15px;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: 20px;
+	float: left;
+	
+}
+.medium_circle_div{
+	height: 40px;
+	width: 40px;
+	border-radius:20px;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: 20px;
+	margin-top: 10px;
+	float: left;
+	background-image: url("flower.jpg")
+}
+
+.logo_div{
+	width: 30%;
+	float: left;
+}
+
+.links_progress_top{
+	text-align: right;
+}
+
+.progress_second{
+	
+	min-height:400px;
+	
+}
+
+.progress_second_left{
+	width: 20%;
+	min-height:400px;
+	float: left;
+	padding: 15px;
+	border-right-style: dotted;
+	border-right-width: 2px;
+	
+}
+
+.progress_second_middle{
+	width: 60%;
+	min-height:400px;
+	float: left;
+	padding: 20px;
+	
+	
+	color: #337ab7;
+	
+}
+
+.current_industry{
+	width:100%
+	float:left;
+	min-height:130px;
+	
+}
+.recently_played{
+	width:100%
+	min-height:100px;
+	float:left;
+}
+
+.played_info{
+	width: 50%;
+	float:left;
+	margin-left: 20px;
+}
+
+.progress_second_right{
+	width: 20%;
+	min-height:400px;
+	float: left;
+	padding: 15px;
+	color: #337ab7;
+	
+}
+
+
+
