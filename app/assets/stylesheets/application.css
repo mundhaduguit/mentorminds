@@ -67,9 +67,9 @@
 
 .industory_category_div{
 	background: #FFFFFF;
-	height: 200px;
-	width: 23%;
-	float: left;
+	height: 150px;
+	width: 100%;
+	/*float: left;*/
 	margin: 5px;
 }
 .ic_left{
@@ -87,12 +87,33 @@
 
 .ic_companies{
 	float: left;
-	width: 90%;
+	width: 20%;
 	text-align: center;
 	border-style: solid;
     border-width: 2px;
+    height: 100px;
+    margin-left: 10px;
 }
 
 .text-align-center{
   text-align: center;
+}
+
+
+.industory_categories_and_companies{
+	float: left;
+	width: 23%;
+	margin-left: 5px;
+}
+.companies_dispaly_div{
+	border-style: solid;
+	border-width: 2px;
+	width: 800px;
+	background: #FFFFFF;
+	display:none;
+}
+.image_company{
+	height: 80%;
+	width: 100%;
+	display: inline-flex;
 }
