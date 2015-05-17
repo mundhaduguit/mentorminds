@@ -11,23 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div class="multi-col-form">
+        <div class="form-group col-md-12">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, class: 'form-control '%>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.label :description %><br>
+          <%= f.text_field :description, class: 'form-control ' %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.label :industry_category_id %><br>
+          <%= f.select :industry_category_id, IndustryCategory.where("Parent_id!=0").pluck(:name,:id),{}, {class: "form-control"} %>
+        </div>
+          <div class="form-group col-md-12">
+        	 <%= f.label :image %><br>
+        	 <%= f.file_field :image %>
+        </div>
+       <div class="actions">
+        <%= f.submit :class=>"btn btn-primary" %>
+      </div>
+    </div>
+
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :industry_category_id %><br>
-    <%= f.number_field :industry_category_id %>
-  </div>
-    <div class="field">
-  	 <%= f.label :image %><br>
-  	 <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+    </div>
 <% end %>
