@@ -10,17 +10,27 @@
 <% end %>
 
 <% if @user_challenges.present? %>
-    <% @user_challenges.each do |user_challenge| %>
-        <div class="clearfix"></div>
-        <div class="row">
-          <div class="col-xs-4" style="background-color: #0feb9e">
-            <%= user_challenge.question %>
-          </div>
+    <div class="p_statement" style="text-align:center">
+      <%= "PROBLEM STATEMENT" %> 
+    </div>>
+    <div class="challenges_main_div">
+      <% @user_challenges.each do |user_challenge| %>
+          <div class="challenges_div">
+            <div class="top">
+              <%= user_challenge.question %> 
+            </div>
 
-          <div class="col-xs-4" style="background-color: #0feb9e">
-            <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+
+            <div class="answer">
+              <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
+            </div>
+
+            
           </div>
-        </div>
-    <% end %>
+          
+      <% end %>
+    </div>
 <% end %>
 
