@@ -25,7 +25,7 @@
         </div>
         <div class="form-group col-md-12">
           <%= f.label :industry_category_id %><br>
-          <%= f.number_field :industry_category_id, class: 'form-control ' %>
+          <%= f.select :industry_category_id, IndustryCategory.where("Parent_id!=0").pluck(:name,:id),{}, {class: "form-control"} %>
         </div>
           <div class="form-group col-md-12">
         	 <%= f.label :image %><br>
@@ -35,5 +35,8 @@
         <%= f.submit :class=>"btn btn-primary" %>
       </div>
     </div>
+
   </div>
+</div>
+    </div>
 <% end %>
