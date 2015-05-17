@@ -8,14 +8,16 @@
       </div>
     </div>
 <% end %>
-
+<div class="challenge-logo">
+  <%= image_tag @industry.image.url(:medium), class: "img-rounded" %>
+  Challenges
+</div>
 <% if @pre_challenges.present? %>
+  <div class="pre-challenge-square">
     <% @pre_challenges.each do |pre_challenge| %>
-        <div class="clearfix"></div>
-        <div class="row">
-          <div class="col-xs-4" style="background-color: #0feb9e">
-            <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
-          </div>
-        </div>
+      <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
+        <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
+      </div>
     <% end %>
+  </div>
 <% end %>
