@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   resources :user_pre_challenges
   resources :pre_challenges
-  resources :user_challenges
+  resources :user_challenges do
+    collection do
+      get "progress"
+      get "leader_board"
+    end
+  end
   resources :pictures
   resources :users
   resources :industries
