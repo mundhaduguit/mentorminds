@@ -273,3 +273,22 @@
 	height: 100px;
 }
 
+.challenges_main_div{
+	margin: 0 auto;
+  width: 80%;
+  background: #FFFFFF;
+  text-align: left;
+  padding: 20px;
+}
+
+.challenges_div{
+	border-style: solid;
+  border-width: 2px;
+  width: 25%;
+  min-height: 200px;
+  float: left;
+  background-color: #0feb9e;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
