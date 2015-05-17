@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :industry_category_id %><br>
-    <%= f.number_field :industry_category_id %>
+    <%= f.select :industry_category_id, IndustryCategory.where("Parent_id!=0").pluck(:name,:id) %>
   </div>
     <div class="field">
   	 <%= f.label :image %><br>
