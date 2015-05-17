@@ -11,20 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :question %><br>
-    <%= f.text_area :question %>
-  </div>
-  <div class="field">
-    <%= f.label :answer %><br>
-    <%= f.text_area :answer %>
-  </div>
-    <div class="field">
-      <%= f.label :industry %><br>
-      <%= f.select :industry_id, Industry.get_all_industry_names_to_select,{} %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div class="multi-col-form">
+        <div class="form-group col-md-12">
+          <%= f.label :question %>
+          <%= f.text_area :question , class: 'form-control ' %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.label :answer %><br>
+          <%= f.text_area :answer, class: 'form-control ' %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.label :industry %><br>
+          <%= f.select :industry_id, Industry.get_all_industry_names_to_select,{} %>
+        </div>
+      <div class="actions">
+        <%= f.submit :class=>"btn btn-primary" %>
+      </div>
     </div>
-    <br>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
