@@ -1,4 +1,5 @@
 class PreChallengesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pre_challenge, only: [:show, :edit, :update, :destroy]
 
   # GET /pre_challenges
