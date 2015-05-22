@@ -25,12 +25,27 @@
     <% end %>
   </tbody>
 </table>
-
-<br>-->
-<div class="item active background_top" style="background-image: url(assets/home.jpg); height: 180px">		  
+<div class="item active background_top" style="background-image: url(assets/home.jpg); height: 180px">
 </div>
+<br>-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-6 col-md-2">
+      Find a Challenge
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Explore an Industry", industry_categories_path %>
+    </div>
+    <div class="col-md-2">
+      User Name
+    </div>
+    <div class="col-md-12">&nbsp;<br>&nbsp;</div>
+
+    </div>
+  </div>
+
 <div class="industory_categories_div">
-	<%= link_to 'New Industry category', new_industry_category_path, :style => "font-size: -webkit-xxx-large; color: white;" %>
+	<div style="font-size: 50px; color:#ffffff"><b>Industries</b></div>
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
