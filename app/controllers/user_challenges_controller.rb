@@ -64,7 +64,6 @@ class UserChallengesController < ApplicationController
   
   
   def progress
-    
   end
   
   def leader_board

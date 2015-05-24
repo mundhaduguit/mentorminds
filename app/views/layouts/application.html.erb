@@ -75,7 +75,7 @@
     <nav class="collapse navbar-collapse navbar-right" role="navigation">
       <ul id="nav" class="nav navbar-nav">
         <% if user_signed_in? %>
-
+          <li><a href="#">Logged In as : <%= current_user.email %></a></li>
           <li class="current"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
           <!-- <li><a href="#team"></a></li> -->
           <li><a href="<%= progress_user_challenges_path %>">Progress</a></li>

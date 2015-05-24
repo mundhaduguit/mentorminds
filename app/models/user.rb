@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  #after_create :set_flag
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,4 +11,9 @@ class User < ActiveRecord::Base
   has_many :user_pre_challenges
   has_many :challenges, :through => :user_challenges
   has_many :user_challenges
+
+  private
+    def set_flag
+      self.flag = true  
+    end 
 end
