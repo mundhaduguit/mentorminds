@@ -4,7 +4,8 @@ class IndustriesController < ApplicationController
   # GET /industries.json
   def index
     #@industries = Industry.all
-    @industries = Industry.where("industry_category_is = ?", params[:id])
+    @industries = Industry.where("industry_category_id = ?", params[:id])   #temporarily changed
+    #where("industry_category_is = ?", params[:id])
   end
 
   # GET /industries/1

@@ -1,4 +1,5 @@
 class UserChallengesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user_challenge, only: [:show, :edit, :update, :destroy]
 
   # GET /user_challenges
@@ -63,7 +64,6 @@ class UserChallengesController < ApplicationController
   
   
   def progress
-    
   end
   
   def leader_board

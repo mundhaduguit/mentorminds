@@ -1,4 +1,5 @@
 class PreChallenge < ActiveRecord::Base
+	resourcify
   has_one :industry
   belongs_to :industry
   has_many :user_pre_challenges
