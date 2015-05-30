@@ -12,14 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
-
-$(document).ready(function(){
-
-
-
+//= require bootstrap.min
+$( document ).ready(function() {
+    $('.next').click(function () {
+        alert("here");
+        $('.current').removeClass('current').hide()
+            .next().show().addClass('current');
+        if ($('.current').hasClass('last')) {
+            $('.next').attr('disabled', true);
+        }
+        $('.prev').attr('disabled', null);
+    });
+    $('.prev').click(function() {
+        alert("here");
+        $('.current').removeClass('current').hide()
+            .prev().show().addClass('current');
+        if ($('.current').hasClass('first')) {
+            $('.prev').attr('disabled', true);
+        }
+        $('.next').attr('disabled', null);
+    });
 });
+
 
 function show_companies(category_id){
 	//alert(category_id);
