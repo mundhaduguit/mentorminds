@@ -54,4 +54,4 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
-gem 'rmagick'
+#gem 'rmagick'
