@@ -10,27 +10,59 @@
 <% end %>
 
 <% if @user_challenges.present? %>
-    <div class="p_statement" style="text-align:center">
-      <%= "PROBLEM STATEMENT" %> 
-    </div>>
+
+
     <div class="challenges_main_div">
-      <% @user_challenges.each do |user_challenge| %>
-          <div class="challenges_div">
-            <div class="top">
-              <%= user_challenge.question %> 
-            </div>
+      <div style="height: 100%;margin-left: auto;margin-right: auto;width: 55%;">
+      <div class="move-arrow prev" >
+        <i class="fa  fa-chevron-left"></i>
+      </div>
+      <% @user_challenges.each_with_index do |user_challenge,i| %>
+        <% if i==0 %>
 
-            <div class="clearfix"></div>
-            <div class="clearfix"></div>
+              <div class="challenges_div first current" style="float: left;">
+                <div class="p_statement" style="width: 100%;text-align: center;">
+                  <%= "PROBLEM STATEMENT" %>
+                </div>
+                <div class="top" style="padding-top: 20%;">
+                  <%= user_challenge.question %>
+                </div>
 
-            <div class="answer">
-              <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
-            </div>
+                <div class="clearfix"></div>
+                <div class="clearfix"></div>
 
-            
-          </div>
-          
+                <div class="answer">
+
+                  <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
+                </div>
+
+
+              </div>
+       <%else%>
+                <div class="challenges_div" style="float: left;display: none;">
+                  <div class="p_statement" style="width: 100%;text-align: center;">
+                    <%= "PROBLEM STATEMENT" %>
+                  </div>
+                  <div class="top" style="padding-top: 20%;">
+                    <%= user_challenge.question %>
+                  </div>
+
+                  <div class="clearfix"></div>
+                  <div class="clearfix"></div>
+
+                  <div class="answer">
+
+                    <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
+                  </div>
+
+
+                </div>
+       <% end %>
       <% end %>
+      <div class="move-arrow next">
+        <i class="fa  fa-chevron-right"></i>
+      </div>
+    </div>
     </div>
 <% end %>
 

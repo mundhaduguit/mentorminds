@@ -38,6 +38,7 @@ gem 'sdoc', group: :doc
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "paperclip"
 gem "cocaine"
+gem 'font-awesome-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -54,4 +55,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+<<<<<<< HEAD
 #gem 'rmagick'
+=======
+#gem 'rmagick'
+>>>>>>> 23483c7a116f77fa02d02c6b59d70cfa4ac213ec
