@@ -313,3 +313,16 @@ body{
     padding-top: 15%;
     cursor: pointer;
 }
+
+.tools_and_persons{
+	/* height: 100%; */
+	background-color: #2E2EFE;
+	float: left;
+}
+
+.date {
+	width: 50px;
+	color: white;
+	background-color: #2E2EFE; 
+	float: right;
+}

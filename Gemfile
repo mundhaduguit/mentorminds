@@ -55,8 +55,3 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
-<<<<<<< HEAD
-#gem 'rmagick'
-=======
-#gem 'rmagick'
->>>>>>> 23483c7a116f77fa02d02c6b59d70cfa4ac213ec

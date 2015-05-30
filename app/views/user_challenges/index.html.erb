@@ -12,13 +12,38 @@
 <% if @user_challenges.present? %>
 
 
-    <div class="challenges_main_div">
+    <div class="challenges_main_div" align="center">
+
+         <div class="tools_and_persons"> 
+            <%= image_tag ("Gamification-Tab.png") %><br><br>
+            <%= image_tag ("Gamification-Tab.png") %><br><br>
+            <%= image_tag ("Gamification-Tab.png") %><br><br>
+            <%= image_tag ("3.png") %><br><br>
+
+            <script type="text/javascript">
+                pixlr.settings.target = 'http://localhost:3000';
+                pixlr.settings.exit = 'http://localhost:3000';
+                pixlr.settings.method = 'GET';
+                pixlr.settings.redirect = false;
+            </script>
+          <a href="javascript:pixlr.overlay.show();" >
+              <%= image_tag ("2.png"), alt: "Pixlr" %><br><br>
+          </a>
+        </div>
+
+        <div class="date" align="center">
+          <% (1..30).each do |date| %>
+            <%= date %><br>
+          <% end -%>
+        </div>
+
       <div style="height: 100%;margin-left: auto;margin-right: auto;width: 55%;">
-      <div class="move-arrow prev" >
-        <i class="fa  fa-chevron-left"></i>
-      </div>
-      <% @user_challenges.each_with_index do |user_challenge,i| %>
-        <% if i==0 %>
+        <div class="move-arrow prev" >
+          <i class="fa  fa-chevron-left"></i>
+        </div>
+
+        <% @user_challenges.each_with_index do |user_challenge,i| %>
+          <% if i==0 %>
 
               <div class="challenges_div first current" style="float: left;">
                 <div class="p_statement" style="width: 100%;text-align: center;">
@@ -32,13 +57,10 @@
                 <div class="clearfix"></div>
 
                 <div class="answer">
-
                   <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
                 </div>
-
-
               </div>
-       <%else%>
+          <%else%>
                 <div class="challenges_div" style="float: left;display: none;">
                   <div class="p_statement" style="width: 100%;text-align: center;">
                     <%= "PROBLEM STATEMENT" %>
@@ -51,13 +73,10 @@
                   <div class="clearfix"></div>
 
                   <div class="answer">
-
                     <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
                   </div>
-
-
                 </div>
-       <% end %>
+          <% end %>
       <% end %>
       <div class="move-arrow next">
         <i class="fa  fa-chevron-right"></i>

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require pixlr
 $( document ).ready(function() {
     $('.next').click(function () {
         alert("here");
