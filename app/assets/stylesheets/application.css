@@ -316,13 +316,16 @@ body{
 
 .tools_and_persons{
 	/* height: 100%; */
-	background-color: #2E2EFE;
+	 border-radius: 10px;
+	 width: 50px;
+	background-color: #0101DF;
 	float: left;
 }
 
 .date {
+	 border-radius: 10px;
 	width: 50px;
 	color: white;
-	background-color: #2E2EFE; 
+	background-color: #0101DF; 
 	float: right;
 }
