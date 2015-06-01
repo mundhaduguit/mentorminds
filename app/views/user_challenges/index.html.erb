@@ -14,19 +14,13 @@
 
     <div class="challenges_main_div" align="center">
 
-         <div class="tools_and_persons"> 
+         <div class="tools_and_persons">
           <br>
             <%= image_tag ("Gamification-Tab.png") %><br><br>
             <%= image_tag ("Gamification-Tab.png") %><br><br>
             <%= image_tag ("Gamification-Tab.png") %><br><br>
             <%= image_tag ("3.png") %><br><br>
 
-            <script type="text/javascript">
-                pixlr.settings.target = 'http://localhost:3000';
-                pixlr.settings.exit = 'http://localhost:3000';
-                pixlr.settings.method = 'GET';
-                pixlr.settings.redirect = false;
-            </script>
           <a href="javascript:pixlr.overlay.show();" >
               <%= image_tag ("2.png"), alt: "Pixlr" %><br><br>
           </a>
@@ -36,7 +30,7 @@
           <br>
           <% (1..30).each do |date| %>
             <%= date %><br>
-          <% end -%>
+          <% end %>
         </div>
 
       <div style="height: 100%;margin-left: auto;margin-right: auto;width: 55%;">
@@ -47,7 +41,7 @@
         <% @user_challenges.each_with_index do |user_challenge,i| %>
           <% if i==0 %>
 
-              <div class="challenges_div first current" style="float: left;">
+              <div class="challenges_div first active" style="float: left;">
                 <div class="p_statement" style="width: 100%;text-align: center;">
                   <%= "PROBLEM STATEMENT" %>
                 </div>

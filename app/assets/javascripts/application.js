@@ -15,22 +15,25 @@
 //= require bootstrap.min
 //= require pixlr
 $( document ).ready(function() {
+      pixlr.settings.target = 'http://localhost:3000';
+      pixlr.settings.exit = 'http://localhost:3000';
+      pixlr.settings.method = 'GET';
+      pixlr.settings.redirect = false;
     $('.next').click(function () {
-        alert("here");
-        $('.current').removeClass('current').hide()
-            .next().show().addClass('current');
-        if ($('.current').hasClass('last')) {
+        $('.active').removeClass('active').toggle( "slide" )
+            .next().toggle( "slide" ).addClass('active');
+       /* if ($('.current').hasClass('last')) {
             $('.next').attr('disabled', true);
-        }
+        }*/
         $('.prev').attr('disabled', null);
     });
     $('.prev').click(function() {
-        alert("here");
-        $('.current').removeClass('current').hide()
-            .prev().show().addClass('current');
-        if ($('.current').hasClass('first')) {
+
+        $('.active').removeClass('active').toggle( "slide" )
+            .prev().toggle( "slide" ).addClass('active');
+        /*if ($('.current').hasClass('first')) {
             $('.prev').attr('disabled', true);
-        }
+        }*/
         $('.next').attr('disabled', null);
     });
 });
