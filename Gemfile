@@ -54,4 +54,3 @@ gem 'acts_as_tree'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
-
