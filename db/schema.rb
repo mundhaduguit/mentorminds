@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602093441) do
+ActiveRecord::Schema.define(version: 20150604084047) do
 
   create_table "challenges", force: :cascade do |t|
     t.text     "question"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20150602093441) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "pre_challenge_events", force: :cascade do |t|
+    t.integer  "pre_challenge_id"
+    t.string   "state"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "pre_challenge_events", ["pre_challenge_id"], name: "index_pre_challenge_events_on_pre_challenge_id"
 
   create_table "pre_challenges", force: :cascade do |t|
     t.string   "name"
