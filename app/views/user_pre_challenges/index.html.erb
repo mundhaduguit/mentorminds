@@ -18,11 +18,14 @@
   <div class="pre-challenge-square">
     <% @pre_challenges.each do |pre_challenge| %>
       
-        <% if pre_challenge.current_state != "locked" %>
+     
+        
           <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
           <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
-        <% end -%>
+        
+      
       </div>
     <% end %>
   </div>
 <% end %>
+

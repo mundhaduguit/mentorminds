@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_answers
   resources :pre_challenge_events
   resources :user_pre_challenges
   resources :pre_challenges
