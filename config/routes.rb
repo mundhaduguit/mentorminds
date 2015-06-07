@@ -87,15 +87,10 @@ end
 
   get 'jobs/search_job'
   post 'jobs/search_job'
-#
+
   authenticated do
     devise_scope :user do
        root to: "users/sessions#after_login", :as => "authenticated"
     end
   end
-
-
-
-
-
 end

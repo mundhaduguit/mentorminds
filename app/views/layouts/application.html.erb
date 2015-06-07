@@ -73,7 +73,9 @@
 
     <!-- main nav -->
     <%= image_tag "mm_logo.png", height:100,width: 100 %>
-    <label style="color: #2e6da4;font-size: 30px;">MentorMind</label>
+    <label style="color: #2e6da4;font-size: 30px;">
+      <%= link_to "MentorMind", '#' %>
+    </label>
     <nav class="collapse navbar-collapse navbar-right" role="navigation">
       <ul id="nav" class="nav navbar-nav">
         <% if user_signed_in? %>
