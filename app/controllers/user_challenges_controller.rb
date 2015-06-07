@@ -6,6 +6,8 @@ class UserChallengesController < ApplicationController
   # GET /user_challenges.json
   def index
     @user_challenges = Challenge.where(:pre_challenge_id => params[:pre_challenge_id])
+    @user_answer = UserAnswer.new
+    
   end
 
   # GET /user_challenges/1

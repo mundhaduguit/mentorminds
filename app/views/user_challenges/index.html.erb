@@ -39,38 +39,16 @@
         </div>
 
         <% @user_challenges.each_with_index do |user_challenge,i| %>
+
           <% if i==0 %>
 
-              <div class="challenges_div first active" style="float: left;">
-                <div class="p_statement" style="width: 100%;text-align: center;">
-                  <%= "PROBLEM STATEMENT" %>
-                </div>
-                <div class="top" style="padding-top: 20%;">
-                  <%= user_challenge.question %>
-                </div>
+              <div class="challenges_div first current" style="float: left;">
+                <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
 
-                <div class="clearfix"></div>
-                <div class="clearfix"></div>
-
-                <div class="answer">
-                  <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
-                </div>
               </div>
           <%else%>
                 <div class="challenges_div" style="float: left;display: none;">
-                  <div class="p_statement" style="width: 100%;text-align: center;">
-                    <%= "PROBLEM STATEMENT" %>
-                  </div>
-                  <div class="top" style="padding-top: 20%;">
-                    <%= user_challenge.question %>
-                  </div>
-
-                  <div class="clearfix"></div>
-                  <div class="clearfix"></div>
-
-                  <div class="answer">
-                    <%=link_to "Answer this", new_user_challenge_path(user_challenge.id)%>
-                  </div>
+                  <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
                 </div>
           <% end %>
       <% end %>
@@ -81,3 +59,18 @@
     </div>
 <% end %>
 
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'user_answers/form' %>
+      </div>
+      
+    </div>
+  </div>
+</div>
