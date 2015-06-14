@@ -65,6 +65,7 @@ class UserChallengesController < ApplicationController
   
   
   def progress
+    @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id)
   end
   
   def leader_board
