@@ -17,9 +17,15 @@
 <% if @pre_challenges.present? %>
   <div class="pre-challenge-square">
     <% @pre_challenges.each do |pre_challenge| %>
-      <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
-        <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
+      
+     
+        
+          <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
+          <%=link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id)%>
+        
+      
       </div>
     <% end %>
   </div>
 <% end %>
+

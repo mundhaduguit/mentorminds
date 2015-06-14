@@ -23,8 +23,10 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
   # end
   def after_login
-    if current_user.sign_in_count > 1
-      redirect_to progress_user_challenges_path
+    if current_user.sign_in_count > 1 && current_user.has_role?(:mentee)
+      redirect_to mentee_pages_index_path
+    elsif current_user.sign_in_count > 1     
+      redirect_to progress_user_challenges_path      
     else
       redirect_to edit_user_path(current_user.id)
     end

@@ -1,0 +1,17 @@
+<div class="p_statement" style="width: 100%;text-align: center;">
+  <%= "PROBLEM STATEMENT" %>
+</div>
+<div class="top" style="padding-top: 20%;">
+  <%= user_challenge.question %>
+</div>
+
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+
+<div class="answer">
+  <!-- <% link_to "Answer this", new_user_challenge_path(user_challenge.id)%> -->
+  <!--          <%=link_to "Answer this", new_user_answer_path(:user_challenge_id =>user_challenge.id)%> -->
+
+  <input value = "Answer This" type="button" class="btn change_user_id" data-toggle="modal" data-target="#myModal" userChallenge = "<%= user_challenge.id %>" />
+                        
+</div>
