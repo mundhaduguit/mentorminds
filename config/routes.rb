@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'mentee_pages/index'
+
+  resources :user_answers
+  resources :pre_challenge_events
   resources :user_pre_challenges
   resources :pre_challenges
   resources :user_challenges do

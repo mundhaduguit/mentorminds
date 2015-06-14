@@ -45,7 +45,7 @@
   </div>
 
 <div class="industory_categories_div">
-	<div style="font-size: 50px; color:#ffffff"><b>Industries</b></div>
+	<div style="font-size: 50px; color:#ffffff"><b>Industry Category</b></div>
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
@@ -57,22 +57,22 @@
 	<br>
 	<div class="row">
 	  <% @industry_categories.each do |industry_category| %>
-		<a href=<%= industry_category_path(industry_category) %>>
-			<div class="industory_category_div" style="width: 23%;float: left;">
-		      <div class="ic_left">
-		      	<%= industry_category.name %>
-		      </div>
-		      <div class="ic_img_right">
-		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
-		      </div>
-		      
-		      <!--<div class="col-md-3">
-		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
-		        <%= industry_category.name %>
-		        <td><%= link_to 'Show', industry_category %></td>
-		      </div>-->
-			</div>
-		</a>
+  		<a href=<%= industry_category_path(industry_category) %>>
+  			<div class="industory_category_div" style="width: 23%;float: left;">
+  		      <div class="ic_left">
+  		      	<%= industry_category.name %>
+  		      </div>
+  		      <div class="ic_img_right">
+  		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
+  		      </div>
+  		      
+  		      <!--<div class="col-md-3">
+  		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
+  		        <%= industry_category.name %>
+  		        <td><%= link_to 'Show', industry_category %></td>
+  		      </div>-->
+  			</div>
+  		</a>
 	  <% end %>
 	</div>
 </div>

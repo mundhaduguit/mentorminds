@@ -5,4 +5,5 @@ class IndustryCategory < ActiveRecord::Base
   acts_as_tree
   belongs_to :industry
   has_many :industries
+  has_many :user_accessed_industries
 end

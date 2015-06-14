@@ -36,6 +36,10 @@ $( document ).ready(function() {
         }*/
         $('.next').attr('disabled', null);
     });
+    $(".change_user_id").click(function  () {
+        
+        $("#user_answer_user_challenge_id").val($(this).attr("userChallenge"));
+    });
 });
 
 
@@ -44,3 +48,4 @@ function show_companies(category_id){
 	$(".companies_dispaly_div").hide();
 	$("#companies_list_"+category_id).show();
 }
+

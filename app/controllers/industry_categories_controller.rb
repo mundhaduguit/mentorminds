@@ -11,6 +11,7 @@ class IndustryCategoriesController < ApplicationController
   # GET /industry_categories/1.json
   def show
     @industry_sub_categories = IndustryCategory.where("parent_id = ?", params[:id])
+    UserAccessedIndustry.create_user_accessed_industry(current_user.id, @industry_category.id) if @industry_category.present? && @industry_category.parent_id == 0
   end
   def get_company_challenges
 
