@@ -9,13 +9,13 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
-#default: &default
-  #adapter: mysql2
-  #encoding: utf8
-  #pool: 5
-  #username: root
-  #assword: root
-  #socket: /var/run/mysqld/mysqld.sock
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
 
 
 development:
@@ -60,14 +60,14 @@ development:
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+#default: &default
+  #adapter: sqlite3
+  #pool: 5
+  #timeout: 5000
 
-development:
-  <<: *default
-  database: db/development.sqlite3
+#development:
+  #<<: *default
+  #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
