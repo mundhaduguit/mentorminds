@@ -11,8 +11,18 @@
  * file per style scope.
  *
  *= require bootstrap.min.css
- *= require_self
+ *= require font-awesome
  */
+
+html{
+    height: 100%;
+}
+#navigation{
+height: 20%;
+}
+body{
+    height: 100%;
+}
  * {
     border: 0 none;
     list-style: outside none none;
@@ -39,6 +49,7 @@
 
 .main_content_div{
 	width: 100%;
+    height: 100%;
 }
 
 .each-part-container{
@@ -273,3 +284,48 @@
 	height: 100px;
 }
 
+.challenges_main_div{
+
+    height: 60%;
+    background: #FFFFFF;
+
+
+}
+
+.challenges_div{
+    text-align: center;
+	background-image: url("fc_bg.png") ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    width: 80%;
+    line-height: 100%;
+
+  background-color: #ffffff;
+
+}
+
+.move-arrow{
+    font-size: 50px;
+    color: #2e6da4;
+    float: left;
+    height: 100%;
+    padding-top: 15%;
+    cursor: pointer;
+}
+
+.tools_and_persons{
+	/* height: 100%; */
+	 border-radius: 10px;
+	 width: 50px;
+	background-color: #2e6da4;
+	float: left;
+}
+
+.date {
+	 border-radius: 10px;
+	width: 50px;
+	color: white;
+	background-color: #2e6da4;
+	float: right;
+}

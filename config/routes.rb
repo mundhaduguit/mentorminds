@@ -73,7 +73,11 @@ end
   #     resources :products
   #   end
   
-    devise_for :users, path: "mentor_minds", controllers: {sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords", confirmations: "users/confirmations", unlocks: "users/unlocks"}, path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'user/registration'}
+    devise_for :users, path: "mentor_minds", controllers: {sessions: "users/sessions", 
+                        registrations: "users/registrations", passwords: "users/passwords", 
+                        confirmations: "users/confirmations", unlocks: "users/unlocks"},
+                         path_names: {sign_in: 'login', sign_out: 'logout', 
+                          sign_up: 'user/registration'}
 
   unauthenticated do
     devise_scope :user do
@@ -86,10 +90,7 @@ end
 
   authenticated do
     devise_scope :user do
-      root to: "users/sessions#after_login", :as => "authenticated"
+       root to: "users/sessions#after_login", :as => "authenticated"
     end
   end
-
-
-
 end

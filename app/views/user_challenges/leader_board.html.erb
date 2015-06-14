@@ -1,1 +1,71 @@
-<%= "Leader borad UI need to do"%>
+<div class="container">
+      <div class="row">
+        <div class="col-md-offset-6 col-md-2">
+            Find a Challenge
+        </div>
+        <div class="col-md-2">
+          <%= link_to "Explore an Industry", industry_categories_path %>
+        </div>
+        <div class="col-md-2">
+          User : <%= current_user.user_name %>
+        </div>
+        <div class="col-md-12">&nbsp;<br>&nbsp;</div>
+        <div class="col-md-2">
+          <%=link_to "Overview", progress_user_challenges_path %><br>
+          <b><%=link_to "How you comapare", leader_board_user_challenges_path %></b>
+        </div>
+        <div class="col-md-8">
+          <h4>MentorMind Leaderboard<br></h4>
+          <br/>
+          <table class="table table-striped" style="border: solid;border-width: 2px;border-color: #269abc">
+            <thead>
+            <tr>
+              <th>NAME</th>
+              <th>COLLEGE, City</th>
+              <th>Challenges Completed</th>
+              <th>MentorMind Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Megha Gajjala</td>
+              <td>GRIET, Hyderabad</td>
+              <td>mary@example.com</td>
+              <td>5400</td>
+            </tr>
+            <tr>
+              <td>Megha Gajjala</td>
+              <td>GRIET, Hyderabad</td>
+              <td>mary@example.com</td>
+              <td>5400</td>
+            </tr>
+            <tr>
+              <td>Megha Gajjala</td>
+              <td>GRIET, Hyderabad</td>
+              <td>mary@example.com</td>
+              <td>5400</td>
+            </tr>
+            <tr>
+              <td>Megha Gajjala</td>
+              <td>GRIET, Hyderabad</td>
+              <td>mary@example.com</td>
+              <td>5400</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
+          <div class="col-md-6">85% Percentage of MentorMind Users you Outrank</div>
+          <div class="col-md-4">&nbsp;</div>
+          <div class="col-md-12">&nbsp;</div>
+          <div class="col-md-4" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
+          <div class="col-md-8">60    Your Rank among all MentorMind Users on Marketing</div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

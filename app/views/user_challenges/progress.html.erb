@@ -1,17 +1,14 @@
-<div class="item active background_top" style="background-image: url(/assets/home.jpg); height: 180px">		  
 
-</div>
+
+
 <div class="progress_main_div">
 	<div class="progress_top">
 		
-		<div class="logo_div">
-			<div class="small_circle_div" ></div>
-			<%= "Mentor Mind"%>
-		</div>
+
 		<div class="links_progress_top">
 		  <%= "Find challenge"%>&nbsp;&nbsp;
 		  <%= "Explore an industory"%>&nbsp;&nbsp;
-		  <%= "User Name"%>&nbsp;&nbsp;
+		  User : <%= current_user.user_name %>&nbsp;&nbsp;
 		</div>
 		
 	</div>
@@ -19,9 +16,9 @@
 	
 	<div class="progress_second">
 		<div class="progress_second_left">
-			<%= "Overview"%>
+          <h4><%=link_to "Overview", progress_user_challenges_path %></h4>
 			</br>
-			<%= "How you comapare"%>
+			<%=link_to "How you comapare", leader_board_user_challenges_path %>
 			
 		</div>
 		<div class="progress_second_middle">

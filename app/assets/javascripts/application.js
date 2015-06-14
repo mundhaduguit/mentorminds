@@ -12,14 +12,32 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require pixlr
+$( document ).ready(function() {
+      pixlr.settings.target = 'http://localhost:3000';
+      pixlr.settings.exit = 'http://localhost:3000';
+      pixlr.settings.method = 'GET';
+      pixlr.settings.redirect = false;
+    $('.next').click(function () {
+        $('.active').removeClass('active').toggle( "slide" )
+            .next().toggle( "slide" ).addClass('active');
+       /* if ($('.current').hasClass('last')) {
+            $('.next').attr('disabled', true);
+        }*/
+        $('.prev').attr('disabled', null);
+    });
+    $('.prev').click(function() {
 
-$(document).ready(function(){
-
-
-
+        $('.active').removeClass('active').toggle( "slide" )
+            .prev().toggle( "slide" ).addClass('active');
+        /*if ($('.current').hasClass('first')) {
+            $('.prev').attr('disabled', true);
+        }*/
+        $('.next').attr('disabled', null);
+    });
 });
+
 
 function show_companies(category_id){
 	//alert(category_id);
