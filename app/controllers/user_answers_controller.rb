@@ -31,7 +31,9 @@ class UserAnswersController < ApplicationController
 
     respond_to do |format|
       if @user_answer.save
-        format.html { redirect_to @user_answer, notice: 'User answer was successfully created.' }
+        #byebug
+        #format.html { redirect_to @user_answer, notice: 'User answer was successfully created.' }
+        format.html { redirect_to user_challenges_path(:pre_challenge_id => @user_answer.user_challenge.challenge.pre_challenge_id) }
         format.json { render :show, status: :created, location: @user_answer }
       else
         format.html { render :new }
