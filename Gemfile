@@ -7,7 +7,7 @@ gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'royce'
 gem 'sqlite3'
-#gem 'mysql2'
+gem 'mysql2'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
