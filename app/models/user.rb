@@ -13,6 +13,19 @@ class User < ActiveRecord::Base
   has_many :user_challenges
   has_many :user_accessed_industries
 
+  def retrieve_industries
+    @challenge_ids = "SELECT challenge_id FROM user_challenges WHERE user_id = (#{self.id})"
+    @industry_ids = "SELECT industry_id FROM challenges where id = (#{@challenge_ids})"
+    Industry.where("id IN (#{@industry_ids})", id)
+  end
+
+  def retrieve_industry_categories
+    retrieve_industries
+    industry_category_ids = "SELECT industry_category_id FROM industries WHERE id = (#{@industry_ids})"
+    IndustryCategory.where("id IN (#{industry_category_ids})", id)
+  end
+
+
   private
     def set_flag
       self.flag = true  

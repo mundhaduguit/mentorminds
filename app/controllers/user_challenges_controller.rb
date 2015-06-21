@@ -69,7 +69,7 @@ class UserChallengesController < ApplicationController
   end
   
   def leader_board
-    
+    @user = User.all
   end
 
   private

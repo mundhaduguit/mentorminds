@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620080500) do
+ActiveRecord::Schema.define(version: 20150620120545) do
 
   create_table "challenges", force: :cascade do |t|
     t.text     "question"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150620080500) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "status"
+    t.decimal  "marks"
   end
 
   add_index "user_answers", ["user_challenge_id"], name: "index_user_answers_on_user_challenge_id"
