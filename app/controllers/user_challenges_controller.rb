@@ -1,7 +1,7 @@
 class UserChallengesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_challenge, only: [:show, :edit, :update, :destroy]
-
+  before_action :create_user_challenges, only: [:index]
   # GET /user_challenges
   # GET /user_challenges.json
   def index
@@ -71,13 +71,23 @@ class UserChallengesController < ApplicationController
   def leader_board
     
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_challenge
       @user_challenge = UserChallenge.find(params[:id])
     end
-
+    
+     # create user challenges for the user
+    def create_user_challenges
+       Challenge.where(params[:pre_challenge_id].to_i).each{ |challenge|
+          unless current_user.user_challenges.collect(&:challenge_id).include? challenge.id
+               current_user_new_challenge = current_user.user_challenges.new
+               current_user_new_challenge.challenge = challenge
+               current_user_new_challenge.save
+          end
+       }
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_challenge_params
       params.require(:user_challenge).permit(:user_id, :challenge_id, :locked, :marks)

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'mentor_pages/index'
+
   get 'mentee_pages/index'
 
   resources :user_answers

@@ -1,0 +1,2 @@
+module MentorPagesHelper
+end
