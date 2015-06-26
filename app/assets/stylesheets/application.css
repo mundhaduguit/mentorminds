@@ -329,3 +329,74 @@ body{
 	background-color: #2e6da4;
 	float: right;
 }
+
+/*Admin part css*/
+.admin_main_div{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+
+}
+
+.tab_admin{
+	width: 50%;
+	float: left;
+	border-radius: 5px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.admin_company_info_tittle{
+	background-color: #33CCFF;
+}
+.admin_student_info_tittle{
+	background-color: #2EB82E;
+}
+
+.admin_company_info_div{
+	background-color: #C2C2CC;
+}
+
+.admin_student_info_div{
+	
+	background-color: #C2C2CC;
+	
+}
+.admin_left_div{
+	width: 75%;
+	float: left;
+	padding: 5%;
+	background-color: #CDEECD;
+}
+.admin_right_div{
+	width: 25%;
+	float: left;
+	padding: 2%;
+	background-color: #C2C2CC;
+}
+
+.admin_layout{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #CDEECD;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin-top: 10px;
+}
+
+.ic_div, .sub_ic_div, .ind_div{
+	height: 20px;
+	margin: 5px;
+	/*border: 1px solid red;*/
+}
+
+.ic_div{
+	background-color: #169393;
+}
+.sub_ic_div{
+	background-color: #8AC0C0;
+}
+.ind_div{
+	background-color: #D0E6E6;
+}

@@ -31,7 +31,8 @@ class IndustriesController < ApplicationController
 
     respond_to do |format|
       if @industry.save
-        format.html { redirect_to @industry, notice: 'Industry was successfully created.' }
+        #format.html { redirect_to @industry, notice: 'Industry was successfully created.' }
+        format.html { redirect_to categories_list_industry_categories_url,  notice: 'Industry was successfully created.' }
         format.json { render :show, status: :created, location: @industry }
       else
         format.html { render :new }
