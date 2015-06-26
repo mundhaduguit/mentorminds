@@ -21,7 +21,7 @@
 					<% industry_category = find_industry_category(user_current_industry.industry_category_id) %>
 					<% if industry_category.present? %>
 						<%= image_tag industry_category.image.url(:medium),class: "circle_div" %>
-						<% industry_category.industries.each do |industry| %>
+						<% find_industries(industry_category).each do |industry| %>
 							<%= image_tag industry.image.url(:medium),class: "medium_circle_div" %>
 						<% end %>
 					<% end %>

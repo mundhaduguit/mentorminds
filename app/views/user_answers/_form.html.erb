@@ -18,6 +18,7 @@
   
 <div style="display:none"> <!--Security flaw need to checked -->
 <%#TODO %>
+  <%= f.text_field :status ,:value => 'in progress', :hidden => true %>
   <%= f.number_field :user_id ,:value => current_user.id, :hidden => true%>
     <% user_challenge_id =@user_challenge.present? ? @user_challenge.id : params[:user_challenge_id] %>
     <%= f.number_field :user_challenge_id, :value => user_challenge_id , :hidden => true%>

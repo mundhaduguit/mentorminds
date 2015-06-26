@@ -74,6 +74,6 @@ class UserAnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_answer_params
-      params.require(:user_answer).permit(:answer, :user_id, :user_challenge_id)
+      params.require(:user_answer).permit(:answer, :user_id, :user_challenge_id, :status)
     end
 end
