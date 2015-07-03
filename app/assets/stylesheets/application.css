@@ -18,7 +18,7 @@ html{
     height: 100%;
 }
 #navigation{
-height: 20%;
+height: 70px;
 }
 body{
     height: 100%;
@@ -75,6 +75,14 @@ body{
 	padding: 20px;
 }
 
+.sub_categories_and_companies_div{
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	padding: 20px;
+	background-color: #AEB6C2;
+}
+
 .industory_categories_and_companies_new{
 	width: 100%
 }
@@ -92,9 +100,10 @@ body{
 
 .ic_left_new{
 	width: 100%;
-	height:50px;
-	line-height: 50px;
+	height: 40px;
+	line-height: 40px;
 	float: left;
+	text-align: center;
 }
 
 
@@ -141,12 +150,13 @@ body{
 
 .ic_companies{
 	float: left;
-	width: 20%;
+	width: 23%;
 	text-align: center;
 	/*border-style: solid;
     border-width: 2px;*/
     height: 100px;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .text-align-center{
@@ -162,8 +172,8 @@ body{
 .companies_dispaly_div{
 	/*border-style: solid;
 	border-width: 2px;*/
-	width: 800px;
-	background: #FFFFFF;
+	width: 750px;
+	background: #AEB6C2;
 	display:none;
 }
 .image_company{
@@ -304,22 +314,18 @@ body{
 }
 
 .pre-challenge-square{
-	display: table;
-	float: left;
-  width: 50%;
-  text-align: center;
-  position: relative;
-  left: 30%;
-  top: 45%;
-  background: #4679BD;
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	padding: 20px;
+	background-color:#AEB6C2;
 }
 
 .challenge-logo{
-	display: table;
-  position: relative;
-  left: 40%;
-  top: 10%;
-  margin-bottom: 10px;
+	margin: 0 auto;
+	width: 80%;
+	text-align: center;
+	padding: 20px;
 }
 
 .challenge-logo img{
