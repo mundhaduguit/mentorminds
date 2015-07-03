@@ -1,0 +1,53 @@
+
+<script type="text/javascript">
+	$(document).ready(function(){hide_show_student_industory()});
+</script>	
+<div class="admin_main_div">
+	<div class="admin_company_info_tittle tab_admin"> Industries Information </div>
+	<div class="admin_student_info_tittle tab_admin" > Students Information </div>
+
+	<div class="admin_company_info_div" id="open_admin_company_info">
+		<div class="admin_left_div">
+			<% @industry_categories.each do |ic|%>
+				<div class="ic_div"><%=ic.name%></div></br>
+					<% sub_categories = IndustryCategory.where("parent_id = ?", ic.id)%>
+					<% sub_categories.each do |sub_ic|%>
+						<div style="margin-left:20px">
+							<div class="sub_ic_div"><%=sub_ic.name%></div></br>
+							<% industries = Industry.where("industry_category_id = ?", sub_ic.id)%>
+							<% industries.each do |ind|%>	
+								<div style="margin-left:20px">
+									<div class = "ind_div"><%=ind.name%></div>
+								</div>
+							<% end -%>
+						</div>
+					<% end -%>
+			<% end -%>
+		</div>	
+		<div class="admin_right_div">
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="/industries/new">Add Industry</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/industry_categories/new">Add Industry Category</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/pre_challenges/new">Add Pre Challenge</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/challenges/new">Add Challenges</a></li>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+
+
+	<div class="admin_student_info_div" id="open_admin_student_info">
+		<div class="admin_left_div">
+			<% users= User.all%>
+			<%users.each do |user|%>
+				<%=user.email%></br>
+			<% end -%>
+		</div>
+
+
+		<div class="admin_right_div">
+			links 22222
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>

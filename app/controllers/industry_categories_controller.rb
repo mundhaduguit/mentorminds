@@ -32,7 +32,8 @@ class IndustryCategoriesController < ApplicationController
 
     respond_to do |format|
       if @industry_category.save
-        format.html { redirect_to @industry_category, notice: 'Industry category was successfully created.' }
+        #format.html { redirect_to @industry_category, notice: 'Industry category was successfully created.' }
+        format.html { redirect_to categories_list_industry_categories_url, notice: 'Industry category was successfully created.' }
         format.json { render :show, status: :created, location: @industry_category }
       else
         format.html { render :new }
@@ -63,6 +64,10 @@ class IndustryCategoriesController < ApplicationController
       format.html { redirect_to industry_categories_url, notice: 'Industry category was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def categories_list
+    @industry_categories = IndustryCategory.where("parent_id = ?", 0)
   end
 
   private
