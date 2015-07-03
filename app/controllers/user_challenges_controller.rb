@@ -65,11 +65,12 @@ class UserChallengesController < ApplicationController
   
   
   def progress
+    @user_current_industries = UserAnswer.joins(user_challenge: {challenge: {pre_challenge: :industry}}).where(user_id: 2,status: 'done').select("industries.industry_category_id as industry_category_id")
     @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id)
   end
   
   def leader_board
-    
+    @user = User.all
   end
   
   private

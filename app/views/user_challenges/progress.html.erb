@@ -16,10 +16,16 @@
 		<div class="progress_second_middle">
 			<div class="current_industry">
 				<%= "CURRENT INDUSTRY PROGRESS"%></br></br>
-				<div class="clearfix"></div>
-				<div class="circle_div"></div>
-				<div class="medium_circle_div"></div>
-				<div class="medium_circle_div"></div>
+				<% @user_current_industries.each_with_index do |user_current_industry,index| %>
+					<div class="clearfix"></div>
+					<% industry_category = find_industry_category(user_current_industry.industry_category_id) %>
+					<% if industry_category.present? %>
+						<%= image_tag industry_category.image.url(:medium),class: "circle_div" %>
+						<% industry_category.industries.each do |industry| %>
+							<%= image_tag industry.image.url(:medium),class: "medium_circle_div" %>
+						<% end %>
+					<% end %>
+				<% end %>
 			</div>
 			<div class="recently_played">
 				<%= "RECENTLY PLAYED"%></br></br>
