@@ -27,8 +27,8 @@
 
 <div class="item active background_top" style="background-image: url(/assets/home.jpg); height: 180px">		  
 </div>
-<div class="industory_categories_div">
-	<%= link_to 'New Industry sub category', new_industry_category_path, :style => "font-size: -webkit-xxx-large; color: white;" %>
+<div class="industory_categories_div_new">
+	<%= link_to 'List of Sub industries', new_industry_category_path, :style => "font-size: -webkit-xxx-large;" %>
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
@@ -40,14 +40,15 @@
 	<br>
 	<div class="row">
 	  <% @industry_sub_categories.each do |industry_category| %>
-		<div class="industory_categories_and_companies">
-			<div class="industory_category_div" onclick="show_companies(<%=industry_category.id %>);">
-		      <div class="ic_left">
+		<div class="industory_categories_and_companies_new">
+			<div class="industory_category_div_new" onclick="show_companies(<%=industry_category.id %>);">
+		      <div class="ic_left_new">
+		      	<div class="glyphicon glyphicon-chevron-right"></div>
 		      	<%= industry_category.name %>
 		      </div>
-		      <div class="ic_img_right">
+		      <!--<div class="ic_img_right">
 		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
-		      </div>
+		      </div> -->
 		    </div>  
 		      <div class="clear"></div>
 		      <% @companies = industry_category.industries %>

@@ -29,7 +29,8 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if @challenge.save
-        format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
+        #format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
+        format.html { redirect_to categories_list_industry_categories_url, notice: 'Challenge was successfully created.' }
         format.json { render :show, status: :created, location: @challenge }
       else
         format.html { render :new }

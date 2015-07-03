@@ -57,6 +57,49 @@ body{
 }
 
 
+
+/*
+	industory_categories css new view
+*/
+
+
+
+/*
+	industory_categories css new view
+*/
+
+.industory_categories_div_new{
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	padding: 20px;
+}
+
+.industory_categories_and_companies_new{
+	width: 100%
+}
+
+.industory_category_div_new{
+	width: 100px;
+	background-color: #337ab7;
+	border-radius: 5px;
+	float: left;
+	min-width: 750px;
+	margin: 5px;
+	color: white;
+	font-size: 2em;
+}
+
+.ic_left_new{
+	width: 100%;
+	height:50px;
+	line-height: 50px;
+	float: left;
+}
+
+
+
+
 /*
 	industory_categories css
 */
@@ -100,8 +143,8 @@ body{
 	float: left;
 	width: 20%;
 	text-align: center;
-	border-style: solid;
-    border-width: 2px;
+	/*border-style: solid;
+    border-width: 2px;*/
     height: 100px;
     margin-left: 10px;
 }
@@ -117,8 +160,8 @@ body{
 	margin-left: 5px;
 }
 .companies_dispaly_div{
-	border-style: solid;
-	border-width: 2px;
+	/*border-style: solid;
+	border-width: 2px;*/
 	width: 800px;
 	background: #FFFFFF;
 	display:none;
@@ -328,4 +371,75 @@ body{
 	color: white;
 	background-color: #2e6da4;
 	float: right;
+}
+
+/*Admin part css*/
+.admin_main_div{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+
+}
+
+.tab_admin{
+	width: 50%;
+	float: left;
+	border-radius: 5px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.admin_company_info_tittle{
+	background-color: #33CCFF;
+}
+.admin_student_info_tittle{
+	background-color: #2EB82E;
+}
+
+.admin_company_info_div{
+	background-color: #C2C2CC;
+}
+
+.admin_student_info_div{
+	
+	background-color: #C2C2CC;
+	
+}
+.admin_left_div{
+	width: 75%;
+	float: left;
+	padding: 5%;
+	background-color: #CDEECD;
+}
+.admin_right_div{
+	width: 25%;
+	float: left;
+	padding: 2%;
+	background-color: #C2C2CC;
+}
+
+.admin_layout{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #CDEECD;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin-top: 10px;
+}
+
+.ic_div, .sub_ic_div, .ind_div{
+	height: 20px;
+	margin: 5px;
+	/*border: 1px solid red;*/
+}
+
+.ic_div{
+	background-color: #169393;
+}
+.sub_ic_div{
+	background-color: #8AC0C0;
+}
+.ind_div{
+	background-color: #D0E6E6;
 }

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :pictures
   resources :users
   resources :industries
-  resources :industry_categories
+  resources :industry_categories do
+    collection do
+      get "categories_list"
+    end
+  end
   resources :challenges do
    collection do
     get "student_challenges"
