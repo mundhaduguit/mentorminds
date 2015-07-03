@@ -59,3 +59,18 @@ function show_companies(category_id){
 	$("#companies_list_"+category_id).show();
 }
 
+function hide_show_student_industory(){
+  $('#open_admin_student_info').hide();
+  $('.admin_company_info_tittle').click(function(){
+    $('#open_admin_student_info').hide();
+    $('#open_admin_company_info').show();
+    
+  }); 
+
+  $('.admin_student_info_tittle').click(function(){
+    
+    $('#open_admin_company_info').hide();
+    $('#open_admin_student_info').show();
+    
+  });  
+}

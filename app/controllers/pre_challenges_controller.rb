@@ -29,7 +29,8 @@ class PreChallengesController < ApplicationController
 
     respond_to do |format|
       if @pre_challenge.save
-        format.html { redirect_to @pre_challenge, notice: 'Pre challenge was successfully created.' }
+        #format.html { redirect_to @pre_challenge, notice: 'Pre challenge was successfully created.' }
+        format.html { redirect_to categories_list_industry_categories_url, notice: 'Pre challenge was successfully created.' }
         format.json { render :show, status: :created, location: @pre_challenge }
       else
         format.html { render :new }
