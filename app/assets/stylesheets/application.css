@@ -57,6 +57,49 @@ body{
 }
 
 
+
+/*
+	industory_categories css new view
+*/
+
+
+
+/*
+	industory_categories css new view
+*/
+
+.industory_categories_div_new{
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	padding: 20px;
+}
+
+.industory_categories_and_companies_new{
+	width: 100%
+}
+
+.industory_category_div_new{
+	width: 100px;
+	background-color: #337ab7;
+	border-radius: 5px;
+	float: left;
+	min-width: 750px;
+	margin: 5px;
+	color: white;
+	font-size: 2em;
+}
+
+.ic_left_new{
+	width: 100%;
+	height:50px;
+	line-height: 50px;
+	float: left;
+}
+
+
+
+
 /*
 	industory_categories css
 */
@@ -100,8 +143,8 @@ body{
 	float: left;
 	width: 20%;
 	text-align: center;
-	border-style: solid;
-    border-width: 2px;
+	/*border-style: solid;
+    border-width: 2px;*/
     height: 100px;
     margin-left: 10px;
 }
@@ -117,8 +160,8 @@ body{
 	margin-left: 5px;
 }
 .companies_dispaly_div{
-	border-style: solid;
-	border-width: 2px;
+	/*border-style: solid;
+	border-width: 2px;*/
 	width: 800px;
 	background: #FFFFFF;
 	display:none;
