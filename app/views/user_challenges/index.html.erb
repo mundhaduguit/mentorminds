@@ -1,17 +1,11 @@
 <br>
 
-<% if current_user.challenges.present? %>
-    <div class="clearfix"></div>
-    <div class="row">
-      <div class="col-xs-4" style="background-color: #0feb9e">
-
-      </div>
-    </div>
-<% end %>
 
 <% if @user_challenges.present? %>
 
-
+    <div style = "margin-left: 200px;color: #0066cc;font-size: 20px;font-weight: bold;float: left;">Score:</div>
+    <div class="score" first_day = "<%= @pre_challenge.first_date %>" style = "color: #0066cc;font-size: 20px;font-weight: bold;float: left;">1000 </div>
+    <div style = "color: #0066cc;font-size: 20px;font-weight: bold;">$</div>
     <div class="challenges_main_div" align="center">
 
          <div class="tools_and_persons">
@@ -45,7 +39,9 @@
         <div class="date" align="center">
           <br>
           <% (1..30).each do |date| %>
-            <%= date %><br>
+            <div class="<%= date %>_date">
+              <%= date %><br>
+            </div>
           <% end %>
         </div>
 
@@ -58,7 +54,7 @@
 
           <% if i==0 %>
 
-              <div class="challenges_div first current" style="float: left;">
+              <div class="challenges_div first current active_slide" style="float: left;">
                 <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
               </div>
           <%else%>

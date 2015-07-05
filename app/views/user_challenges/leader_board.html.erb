@@ -26,39 +26,26 @@
                       <th>MentorMind Points</th>
                     </tr>
                 </thead>
-                <tbody>
+              <%current_user.retrieve_industries.each{|user| %>
+              <tbody>
                     <tr>
-                      <td>Megha Gajjala</td>
-                      <td>GRIET, Hyderabad</td>
-                      <td>mary@example.com</td>
-                      <td>5400</td>
+                      <td><%= user.user.user_name %></td>
+                      <td><%= user.user.collage %></td>
+                      <td><%= user.user.email %></td>
+                      <td><%= user.marks %></td>
                     </tr>
-                    <tr>
-                      <td>Megha Gajjala</td>
-                      <td>GRIET, Hyderabad</td>
-                      <td>mary@example.com</td>
-                      <td>5400</td>
-                    </tr>
-                    <tr>
-                      <td>Megha Gajjala</td>
-                      <td>GRIET, Hyderabad</td>
-                      <td>mary@example.com</td>
-                      <td>5400</td>
-                    </tr>
-                    <tr>
-                      <td>Megha Gajjala</td>
-                      <td>GRIET, Hyderabad</td>
-                      <td>mary@example.com</td>
-                      <td>5400</td>
-                    </tr>
+
                 </tbody>
+              <%}%>
             </table>
           <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
-          <div class="col-md-6">85% Percentage of MentorMind Users you Outrank</div>
+          <div class="col-md-6">100% Percentage of MentorMind Users you Outrank</div>
           <div class="col-md-4">&nbsp;</div>
           <div class="col-md-12">&nbsp;</div>
-          <div class="col-md-4" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
-          <div class="col-md-8">60    Your Rank among all MentorMind Users on Marketing</div>
+          <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
+          <div class="col-md-6">1    Your Rank among all MentorMind Users on Marketing</div>
+          <div class="col-md-4">&nbsp;</div>
+          <div class="col-md-12">&nbsp;</div>
         </div>
 
 
@@ -66,9 +53,4 @@
     </div>
 
 </div>
-<div>
-  <h3>Industry category name</h3>
-  <% current_user.retrieve_industry_categories.each do |industry_category| %>
-    <%= industry_category.name %> <br>
-  <% end -%>
-</div>
+

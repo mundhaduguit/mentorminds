@@ -9,6 +9,7 @@ gem 'royce'
 #gem 'sqlite3'
 gem 'mysql2'
 #gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets

@@ -380,6 +380,16 @@ body{
 	float: right;
 }
 
+
+.disabled
+{
+  pointer-events: none;
+  opacity: 0.5;
+  background: #CCC;
+}
+.high{
+    font-size: 40px;
+}
 /*Admin part css*/
 .admin_main_div{
 	width: 80%;

@@ -1,0 +1,15 @@
+class UserPreChallenge < ActiveRecord::Base
+	resourcify
+  belongs_to :user
+  belongs_to :pre_challenge
+  # create user challenges for the user
+    def create_user_challenges
+       Challenge.where(params[:pre_challenge_id].to_i).each{|challenge|
+          unless current_user.user_challenges.collect(&:challenge_id).include? challenge.id
+               current_user_new_challenge = current_user.user_challenges.new
+               current_user_new_challenge.challenge = challenge
+               current_user_new_challenge.save
+          end
+       }
+    end
+end

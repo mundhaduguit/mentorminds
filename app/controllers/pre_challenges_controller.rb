@@ -71,6 +71,6 @@ class PreChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pre_challenge_params
-      params.require(:pre_challenge).permit(:name, :industry_id )
+      params.require(:pre_challenge).permit(:name, :industry_id,:first_date, :second_date )
     end
 end

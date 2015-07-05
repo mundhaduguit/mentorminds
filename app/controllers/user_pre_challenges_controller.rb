@@ -13,6 +13,7 @@ class UserPreChallengesController < ApplicationController
   # GET /user_pre_challenges/1
   # GET /user_pre_challenges/1.json
   def show
+
   end
 
   # GET /user_pre_challenges/new
@@ -27,11 +28,11 @@ class UserPreChallengesController < ApplicationController
   # POST /user_pre_challenges
   # POST /user_pre_challenges.json
   def create
-    @user_pre_challenge = UserPreChallenge.new(user_pre_challenge_params)
 
+    @user_pre_challenge = UserPreChallenge.new(user_pre_challenge_params)
     respond_to do |format|
       if @user_pre_challenge.save
-        format.html { redirect_to @user_pre_challenge, notice: 'User pre challenge was successfully created.' }
+        format.html { redirect_to user_pre_challenge_path(:id =>@user_pre_challenge.id, :pre_challenge_id => params[:pre_challenge_id]), notice: 'User pre challenge was successfully created.' }
         format.json { render :show, status: :created, location: @user_pre_challenge }
       else
         format.html { render :new }
@@ -64,6 +65,19 @@ class UserPreChallengesController < ApplicationController
     end
   end
 
+  # create user challenges for the user
+    def create_user_pre_challenges
+       if params[:company_id].present?
+               byebug
+	       PreChallenge.where(params[:company_id].to_i).each{|pre_challenge|
+		  unless current_user.user_pre_challenges.collect(&:pre_challenge_id).include? pre_challenge.id
+		       current_user_new_challenge = current_user.user_pre_challenges.new
+		       current_user_new_challenge.challenge = challenge
+		       current_user_new_challenge.save
+		  end
+	       }
+      end
+    end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_pre_challenge

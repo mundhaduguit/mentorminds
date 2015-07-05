@@ -1,15 +1,20 @@
 class UserChallengesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_challenge, only: [:show, :edit, :update, :destroy]
-
+  before_action :create_user_challenges, only: [:index]
   # GET /user_challenges
   # GET /user_challenges.json
   def index
+
+    @pre_challenge = PreChallenge.find((params[:pre_challenge_id]).to_i);
+    @user_challenges = Challenge.where(:pre_challenge_id => params[:pre_challenge_id])
+
     challenge_ids = Challenge.where(:pre_challenge_id => params[:pre_challenge_id]).pluck(:id)
     challenge_ids.each do |challenge_id|
       UserChallenge.create(user_id: current_user.id, challenge_id: challenge_id) if UserChallenge.where(user_id: current_user.id, challenge_id: challenge_id).blank?
     end
     @user_challenges = UserChallenge.where("challenge_id in (?)", challenge_ids)
+
     @user_answer = UserAnswer.new
   end
 
@@ -69,20 +74,32 @@ class UserChallengesController < ApplicationController
   
   
   def progress
+
     @user_current_industries = UserAnswer.joins(user_challenge: {challenge: {pre_challenge: :industry}}).where("user_answers.user_id = ? AND status IN (?) ", current_user.id, ['done', 'in progress']).select("industries.industry_category_id as industry_category_id").order("user_answers.updated_at DESC").uniq
     @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id)
+
   end
   
   def leader_board
     @user = User.all
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_challenge
       @user_challenge = UserChallenge.find(params[:id])
     end
-
+    
+     # create user challenges for the user
+    def create_user_challenges
+       Challenge.where(params[:pre_challenge_id].to_i).each{ |challenge|
+          unless current_user.user_challenges.collect(&:challenge_id).include? challenge.id
+               current_user_new_challenge = current_user.user_challenges.new
+               current_user_new_challenge.challenge = challenge
+               current_user_new_challenge.save
+          end
+       }
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_challenge_params
       params.require(:user_challenge).permit(:user_id, :challenge_id, :locked, :marks)
