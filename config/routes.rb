@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'mentee_pages/index'
 
-  resources :user_answers
+
   resources :pre_challenge_events
   resources :user_pre_challenges
   resources :pre_challenges
@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
   resources :pictures
   resources :users
-  resources :industries
+  resources :industries do
+    resources :user_answers, shallow: true
+  end
   resources :industry_categories do
     collection do
       get "categories_list"

@@ -9,9 +9,29 @@
 <div class="clearfix"></div>
 
 <div class="answer">
+
+
+
+
   <!-- <% link_to "Answer this", new_user_challenge_path(user_challenge.id)%> -->
   <!--          <%=link_to "Answer this", new_user_answer_path(:user_challenge_id =>user_challenge.id)%> -->
 
-  <input value = "Answer This" type="button" class="btn change_user_id" data-toggle="modal" data-target="#myModal" userChallenge = "<%= user_challenge.id %>" />
+  <input value = "Answer This" type="button" class="btn change_user_id" data-toggle="modal" data-target="#myModal_<%=user_challenge.id%>" userChallenge = "<%= user_challenge.id %>" />
                         
+</div>
+
+<div class="modal fade" id="myModal_<%=user_challenge.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <% @user_answer = user_challenge.user_answer if user_challenge.user_answer.present?%>
+        <%= render 'user_answers/form' %>
+      </div>
+
+    </div>
+  </div>
 </div>
