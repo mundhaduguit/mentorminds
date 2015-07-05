@@ -23,6 +23,14 @@
           <%= f.label :industry %><br>
           <%= f.select :industry_id, Industry.pluck(:name, :id),{} %>
         </div>
+        <div class="form-group col-md-12">
+          <%= f.label :first_date %><br>
+          <%= f.text_field :first_date %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.label :second_date %><br>
+          <%= f.text_field :second_date %>
+        </div>
       <div class="actions">
         <%= f.submit :class=>"btn btn-primary" %>
       </div>

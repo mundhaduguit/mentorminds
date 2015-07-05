@@ -14,9 +14,8 @@ class User < ActiveRecord::Base
   has_many :user_accessed_industries
 
   def retrieve_industries
-    @challenge_ids = "SELECT challenge_id FROM user_challenges WHERE user_id = (#{self.id})"
-    @industry_ids = "SELECT industry_id FROM challenges where id = (#{@challenge_ids})"
-    Industry.where("id IN (#{@industry_ids})", id)
+    u=self.user_challenges.collect(&:challenge_id).uniq
+    UserChallenge.select("*,sum(marks) as marks").group(:user_id,:challenge_id).where(:challenge_id => u).all
   end
 
   def retrieve_industry_categories

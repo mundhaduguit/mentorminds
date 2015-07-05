@@ -13,6 +13,7 @@ class UserPreChallengesController < ApplicationController
   # GET /user_pre_challenges/1
   # GET /user_pre_challenges/1.json
   def show
+
   end
 
   # GET /user_pre_challenges/new
@@ -27,11 +28,11 @@ class UserPreChallengesController < ApplicationController
   # POST /user_pre_challenges
   # POST /user_pre_challenges.json
   def create
-    @user_pre_challenge = UserPreChallenge.new(user_pre_challenge_params)
 
+    @user_pre_challenge = UserPreChallenge.new(user_pre_challenge_params)
     respond_to do |format|
       if @user_pre_challenge.save
-        format.html { redirect_to @user_pre_challenge, notice: 'User pre challenge was successfully created.' }
+        format.html { redirect_to user_pre_challenge_path(:id =>@user_pre_challenge.id, :pre_challenge_id => params[:pre_challenge_id]), notice: 'User pre challenge was successfully created.' }
         format.json { render :show, status: :created, location: @user_pre_challenge }
       else
         format.html { render :new }

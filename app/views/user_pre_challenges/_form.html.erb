@@ -23,6 +23,7 @@
           <%= f.label :pre_challenge_id %><br>
           <%= f.select :pre_challenge_id,PreChallenge.where(:industry_id => params[:company_id].to_i).pluck(:name,:id),{} %>
         </div>
+
       <div class="actions">
         <%= f.submit :class=>"btn btn-primary" %>
       </div>
