@@ -4,7 +4,8 @@
   # GET /user_answers
   # GET /user_answers.json
   def index
-    @user_answers = UserAnswer.all
+    #@user_answers = UserAnswer.all
+    @user_answers = UserAnswer.where(:industry_id => params[:industry_id])
   end
 
   # GET /user_answers/1

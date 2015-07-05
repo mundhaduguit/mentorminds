@@ -17,7 +17,7 @@
 							<% industries = Industry.where("industry_category_id = ?", sub_ic.id)%>
 							<% industries.each do |ind|%>	
 								<div style="margin-left:20px">
-									<div class = "ind_div"><%=ind.name%></div>
+									<div class = "ind_div"><%=link_to ind.name, industry_user_answers_path(ind.id) %></div>
 								</div>
 							<% end -%>
 						</div>
