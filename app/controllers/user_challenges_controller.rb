@@ -81,7 +81,8 @@ class UserChallengesController < ApplicationController
   end
   
   def leader_board
-    @user = User.all
+    #@user = User.all
+    @user_answers = UserAnswer.joins(:user).select("user_answers.user_id as user_id, sum(user_answers.marks) as marks").where(:status => 'done').group('user_id').order("marks DESC")
   end
   
   private
