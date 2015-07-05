@@ -24,63 +24,62 @@
 <%= link_to 'Back', industry_categories_path %>
 -->
 
+  <script type="text/javascript">
+    $(function() {
+      show_companies_hover();
+    });
+  </script>
 
 <div class="item active background_top" style="background-image: url(/assets/home.jpg); height: 180px">		  
 </div>
 <div class="industory_categories_div_new">
-	<%= link_to 'List of Sub industries', new_industry_category_path, :style => "font-size: -webkit-xxx-large;" %>
+	<!--<%= link_to 'List of Sub industries', new_industry_category_path, :style => "font-size: -webkit-xxx-large;" %>-->
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
+	<div style = "font-size: -webkit-xxx-large; text-align:center;"> <%= @industry_category.name%></div>
 	<style>
 	    .circle-border {width:199px; height:199px; border-radius:100px; -moz-border-radius: 100px; -webkit-border-radius: 100px; -khtml-border-radius: 100px; font-size:20px; color:#fff; line-height:200px; text-align:center; background:#000; border: 1px solid #999; }
 	</style>
 	<br>
-	<br>
-	<br>
-	<div class="row">
-	  <% @industry_sub_categories.each do |industry_category| %>
-		<div class="industory_categories_and_companies_new">
-			<div class="industory_category_div_new" onclick="show_companies(<%=industry_category.id %>);">
-		      <div class="ic_left_new">
-		      	<div class="glyphicon glyphicon-chevron-right"></div>
-		      	<%= industry_category.name %>
-		      </div>
-		      <!--<div class="ic_img_right">
-		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
-		      </div> -->
-		    </div>  
-		      <div class="clear"></div>
-		      <% @companies = industry_category.industries %>
+	<div class="sub_categories_and_companies_div">
+		<div class="row">
+		  <% @industry_sub_categories.each do |industry_category| %>
+			<div class="industory_categories_and_companies_new">
+				<div class="industory_category_div_new" id ="<%=industry_category.id %>" onclick="show_companies(<%=industry_category.id %>);">
+			      <div class="ic_left_new">
+			      	<!-- <div class="glyphicon glyphicon-chevron-right"></div> -->
+			      	<%= industry_category.name %>
+			      </div>
+			      <!--<div class="ic_img_right">
+			      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
+			      </div> -->
+			    </div>  
+			      <div class="clear"></div>
+			      <% @companies = industry_category.industries %>
 
-		      <!--<div class="col-md-3">
-		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
-		        <%= industry_category.name %>
-		        <td><%= link_to 'Show', industry_category %></td>
-		      </div>-->
-              <div class="companies_dispaly_div" id="companies_list_<%=industry_category.id %>">
-	              <% if @companies.present? %>
-					
-	                    <% @companies.each do |company| %>
-	                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" >
-	                            <div class="image_company">
-	                            	<%= image_tag company.image.url(:medium), class: "img-rounded" %>
-	                            </div>
-	                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
-	                        </div>
-	                        
-	                    <%end%>
-	                	<div class="clearfix"></div>
-	              <%end %>
-	          </div>
-	       </div>   
-
-            
-			
-
-
-		
-		
-	  <% end %>
-	</div>
+			      <!--<div class="col-md-3">
+			        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
+			        <%= industry_category.name %>
+			        <td><%= link_to 'Show', industry_category %></td>
+			      </div>-->
+	              <div class="companies_dispaly_div" id="companies_list_<%=industry_category.id %>">
+		              <% if @companies.present? %>
+						
+		                    <% @companies.each do |company| %>
+		                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" >
+		                            <div class="image_company">
+		                            	<%= image_tag company.image.url(:medium), class: "img-rounded" %>
+		                            </div>
+		                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
+		                        </div>
+		                        
+		                    <%end%>
+		                	<div class="clearfix"></div>
+		              <%end %>
+		          </div>
+		       </div>   
+		  <% end %>
+		</div>
+	</div>	
 </div>

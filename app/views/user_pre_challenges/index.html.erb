@@ -16,6 +16,7 @@
 </div>
 <% if @pre_challenges.present? %>
   <div class="pre-challenge-square">
+
     <% @pre_challenges.each_with_index do |pre_challenge,i| %>
          <% if i<2 %>
           <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
@@ -29,6 +30,9 @@
          <% end %>
         
     <% end %>
+    <div class="clearfix"></div>
   </div>
+<% else%>
+  <%= "No pre challenges are available"%> 
 <% end %>
 

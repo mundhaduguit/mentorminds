@@ -59,6 +59,23 @@ function show_companies(category_id){
 	$("#companies_list_"+category_id).show();
 }
 
+
+function show_companies_hover(){
+  $(".industory_category_div_new").mouseover(function(){
+      //alert($(this).attr("id"));
+      var category_id = $(this).attr("id");
+      $(".companies_dispaly_div").hide();
+      $("#companies_list_"+category_id).show();
+
+  });
+
+  $(".industory_category_div_new").mouseleave(function(){
+      //alert($(this).attr("id"));
+      //$(".companies_dispaly_div").hide();
+      
+  });
+}
+
 function hide_show_student_industory(){
   $('#open_admin_student_info').hide();
   $('.admin_company_info_tittle').click(function(){

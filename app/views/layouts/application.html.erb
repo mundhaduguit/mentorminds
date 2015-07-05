@@ -85,7 +85,11 @@
           <li><a href="<%= progress_user_challenges_path %>">Progress</a></li>
           <li><a href="<%= leader_board_user_challenges_path %>">Leader Board</a></li>
           <li><a href="<%= industry_categories_path %>">Industries</a></li>
-
+          <li>
+            <% if current_user && current_user.has_role?(:admin) %>
+              <%=link_to 'admin panel', categories_list_industry_categories_path %>
+            <% end -%>
+          </li>
         <% else %>
           <li><a> Login</a></li>
           <li><a href="#features">About</a></li>
@@ -96,7 +100,7 @@
       </ul>
 
 
-        <% if current_user && current_user.has_role?(:admin) %>
+        <!--<% if current_user && current_user.has_role?(:admin) %>
           <%=link_to 'admin panel', categories_list_industry_categories_path %>
           <div class="dropdown" style="float: right; top: 14px;">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="border:none;padding:2px;color: #337ab7; text-decoration: none;">
@@ -109,8 +113,8 @@
               <li role="presentation"><a role="menuitem" tabindex="-1" href="/pre_challenges/new">Add Pre Challenge</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="/challenges/new">Add Challenges</a></li>
             </ul>
-          </div>
-        <% end -%>
+          </div> 
+        <% end -%> -->
 
       </nav>
   <!-- /main nav -->
