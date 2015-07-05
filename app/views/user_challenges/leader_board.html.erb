@@ -26,13 +26,14 @@
                       <th>MentorMind Points</th>
                     </tr>
                 </thead>
-              <%current_user.retrieve_industries.each{|user| %>
+              <% @user_answers.each{|user_answer| %>
+              <% user = User.where(:id => user_answer.user_id).first %>
               <tbody>
                     <tr>
-                      <td><%= user.user.user_name %></td>
-                      <td><%= user.user.collage %></td>
-                      <td><%= user.user.email %></td>
-                      <td><%= user.marks %></td>
+                      <td><%= user.user_name %></td>
+                      <td><%= user.collage %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user_answer.marks %></td>
                     </tr>
 
                 </tbody>
