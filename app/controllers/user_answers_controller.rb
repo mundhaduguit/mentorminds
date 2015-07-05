@@ -49,7 +49,11 @@
   def update
     respond_to do |format|
       if @user_answer.update(user_answer_params)
-        format.html { redirect_to @user_answer, notice: 'User answer was successfully updated.' }
+        if @user_answer.from_side
+          format.html { redirect_to user_challenges_path(:pre_challenge_id => @user_answer.user_challenge.challenge.pre_challenge_id) }
+        else
+          format.html { redirect_to @user_answer, notice: 'User answer was successfully updated.' }
+        end
         format.json { render :show, status: :ok, location: @user_answer }
       else
         format.html { render :edit }
@@ -76,6 +80,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_answer_params
-      params.require(:user_answer).permit(:answer, :user_id, :user_challenge_id, :status)
+      params.require(:user_answer).permit(:answer, :user_id, :user_challenge_id, :status,:from_side)
     end
 end

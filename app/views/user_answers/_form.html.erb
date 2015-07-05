@@ -22,6 +22,9 @@
     </div>
     <%=f.error_span(:answer) %>
   </div>
+<% if @flag %>
+        <%= f.hidden_field :from_side, :class => 'form-control', :value => true %>
+ <%else%>
   <div class="form-group">
     <%= f.label :user_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -57,7 +60,7 @@
     </div>
     <%=f.error_span(:industry_id) %>
   </div>
-
+    <% end %>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
@@ -66,3 +69,4 @@
   </div>
 
 <% end %>
+
