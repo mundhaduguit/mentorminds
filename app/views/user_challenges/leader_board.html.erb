@@ -1,57 +1,72 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-offset-6 col-md-2">
-            Find a Challenge
-        </div>
-        <div class="col-md-2">
-          <%= link_to "Explore an Industry", industry_categories_path %>
-        </div>
-        <div class="col-md-2">
-          User : <%= current_user.user_name %>
-        </div>
-        <div class="col-md-12">&nbsp;<br>&nbsp;</div>
-        <div class="col-md-2">
-          <%=link_to "Overview", progress_user_challenges_path %><br>
-          <b><%=link_to "How you comapare", leader_board_user_challenges_path %></b>
-        </div>
-        <div class="col-md-8">
-          <h4>MentorMind Leaderboard<br></h4>
-          <br/>
-            <table class="table table-striped" style="border: solid;border-width: 2px;border-color: #269abc">
-                <thead>
-                    <tr>
-                      <th>NAME</th>
-                      <th>COLLEGE, City</th>
-                      <th>Challenges Completed</th>
-                      <th>MentorMind Points</th>
-                    </tr>
-                </thead>
-              <% @user_answers.each{|user_answer| %>
-              <% user = User.where(:id => user_answer.user_id).first %>
-              <tbody>
-                    <tr>
-                      <td><%= user.user_name %></td>
-                      <td><%= user.collage %></td>
-                      <td><%= user.email %></td>
-                      <td><%= user_answer.marks %></td>
-                    </tr>
-
-                </tbody>
-              <%}%>
-            </table>
-          <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
-          <div class="col-md-6">100% Percentage of MentorMind Users you Outrank</div>
-          <div class="col-md-4">&nbsp;</div>
-          <div class="col-md-12">&nbsp;</div>
-          <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
-          <div class="col-md-6">1    Your Rank among all MentorMind Users on Marketing</div>
-          <div class="col-md-4">&nbsp;</div>
-          <div class="col-md-12">&nbsp;</div>
-        </div>
-
-
-
+  <div class="row">
+    <div class="col-md-offset-6 col-md-2">
+        Find a Challenge
     </div>
-
+    <div class="col-md-2">
+      <%= link_to "Explore an Industry", industry_categories_path %>
+    </div>
+    <div class="col-md-2">
+      User : <%= current_user.user_name %>
+    </div>
+    <div class="col-md-12">&nbsp;<br>&nbsp;</div>
+    <div class="col-md-2">
+      <%=link_to "Overview", progress_user_challenges_path %><br>
+      <b><%=link_to "How you comapare", leader_board_user_challenges_path %></b>
+    </div>
+    <div class="col-md-8">
+      <h4>MentorMind Leaderboard<br></h4>
+      <br/>
+        <table class="table table-striped" style="border: solid;border-width: 2px;border-color: #269abc">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>COLLEGE, City</th>
+              <th>Challenges Completed</th>
+              <th>MentorMind Points</th>
+            </tr>
+          </thead>
+          <% counter = 0 %>
+          <% rank_position = 0 %>
+          <% @user_answers.each do |user_answer| %>
+            <% user = User.where(:id => user_answer.user_id).first %>
+            <% counter +=1 %>
+            <% if user.id == current_user.id %>
+              <% rank_position = counter %>
+            <% end -%>
+            <tbody>
+              <tr>
+                <td><%= user.user_name %></td>
+                <td><%= user.collage %></td>
+                <td><%= user.email %></td>
+                <td><%= user_answer.marks %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      <% total_count = @user_answers.size %>
+      <% percenatge = rank_position == 0 ? 0 : (((total_count - rank_position)*100)/total_count)%>
+      
+      100% Percentage of MentorMind Users you Outrank
+      <div class="lb_complete_div">
+        <div class="lb_percentage_div" style="width: <%= percenatge %>%"></div>
+      </div>
+      
+      <% rank_percenatge = ((rank_position*100)/total_count)%>
+      <div class="clearfix"></div>
+      Your Rank among all MentorMind Users on Marketing <%= rank_position == 0 ? "" : rank_position %>
+      <div class="lb_complete_div">
+        <div class="lb_percentage_div" style="width: <%= rank_percenatge %>%"></div>
+      </div>
+      <!--<div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
+      <div class="col-md-6">100% Percentage of MentorMind Users you Outrank</div>
+      <div class="col-md-4">&nbsp;</div>
+      <div class="col-md-12">&nbsp;</div>
+      <div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
+      <div class="col-md-6">1    Your Rank among all MentorMind Users on Marketing</div>
+      <div class="col-md-4">&nbsp;</div>
+      <div class="col-md-12">&nbsp;</div>-->
+    </div>
+  </div>
 </div>
 

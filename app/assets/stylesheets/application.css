@@ -460,3 +460,21 @@ body{
 .ind_div{
 	background-color: #D0E6E6;
 }
+
+
+
+
+
+.lb_complete_div {
+	width: 600px;
+	border: 2px #269abc solid;
+	height: 35px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 15px
+}
+.lb_percentage_div{
+	background-color: #269abc;
+	height: 33px;
+}
+
