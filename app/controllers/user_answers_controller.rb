@@ -10,7 +10,7 @@
   # GET /user_answers/1
   # GET /user_answers/1.json
   def show
-    redirect_to user_challenges_path(:pre_challenge_id => params[:pre_challenge_id])
+    redirect_to user_challenges_path(:pre_challenge_id => params[:pre_challenge_id]) if params[:pre_challenge_id].present?
   end
 
   # GET /user_answers/new
