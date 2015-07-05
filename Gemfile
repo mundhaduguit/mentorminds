@@ -10,6 +10,7 @@ gem 'royce'
 gem 'mysql2'
 #gem 'pg'
 
+gem "rails-erd"
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
