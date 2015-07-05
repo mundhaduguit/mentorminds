@@ -5,6 +5,7 @@ class UserChallengesController < ApplicationController
   # GET /user_challenges
   # GET /user_challenges.json
   def index
+    @pre_challenge = PreChallenge.find((params[:pre_challenge_id]).to_i);
     @user_challenges = Challenge.where(:pre_challenge_id => params[:pre_challenge_id])
     @user_answer = UserAnswer.new
   end
@@ -65,8 +66,8 @@ class UserChallengesController < ApplicationController
   
   
   def progress
-    @user_current_industries = UserAnswer.joins(user_challenge: {challenge: {pre_challenge: :industry}}).where(user_id: 2,status: 'done').select("industries.industry_category_id as industry_category_id")
-    @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id)
+    @user_current_industries = UserAnswer.joins(user_challenge: {challenge: {pre_challenge: :industry}}).where(user_id: current_user.id).select("industries.industry_category_id as industry_category_id")
+    @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id).uniq
   end
   
   def leader_board

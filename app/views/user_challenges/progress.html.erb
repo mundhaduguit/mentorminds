@@ -16,7 +16,7 @@
 		<div class="progress_second_middle">
 			<div class="current_industry">
 				<%= "CURRENT INDUSTRY PROGRESS"%></br></br>
-				<% @user_current_industries.each_with_index do |user_current_industry,index| %>
+				<% @user_current_industries.uniq.each_with_index do |user_current_industry,index| %>
 					<div class="clearfix"></div>
 					<% industry_category = find_industry_category(user_current_industry.industry_category_id) %>
 					<% if industry_category.present? %>
@@ -40,7 +40,8 @@
 		<div class="progress_second_right">
 			<%= "INDUSTRIES ACCESSED"%></br></br>
 			<% @user_accessed_industries.each do |user_accessed_industry| %>
-				<%= link_to (image_tag user_accessed_industry.industry_category.image.url(:medium), class: "circle_div"), industry_category_path(user_accessed_industry.industry_category) %>
+
+				    <%= link_to (image_tag user_accessed_industry.industry_category.image.url(:medium), class: "circle_div"), industry_category_path(user_accessed_industry.industry_category) %>
 				<div class="clearfix"></div>
 			<% end %>	
 		</div>

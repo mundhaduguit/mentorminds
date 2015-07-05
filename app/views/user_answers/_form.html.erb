@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+ <input type="hidden" value="<%=params[:pre_challenge_id]%>" name="pre_challenge_id"/>
   <div class="field">
     <%= f.label :answer %><br>
     <%= f.text_area :answer %>

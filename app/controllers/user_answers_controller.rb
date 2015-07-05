@@ -1,4 +1,4 @@
-class UserAnswersController < ApplicationController
+ class UserAnswersController < ApplicationController
   before_action :set_user_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /user_answers
@@ -10,6 +10,7 @@ class UserAnswersController < ApplicationController
   # GET /user_answers/1
   # GET /user_answers/1.json
   def show
+    redirect_to user_challenges_path(:pre_challenge_id => params[:pre_challenge_id])
   end
 
   # GET /user_answers/new
@@ -32,8 +33,8 @@ class UserAnswersController < ApplicationController
     respond_to do |format|
       if @user_answer.save
         #byebug
-        format.html { redirect_to @user_answer, notice: 'User answer was successfully created.' }
-        #format.html { redirect_to user_challenges_path(:pre_challenge_id => @user_answer.user_challenge.challenge.pre_challenge_id) }
+        #format.html { redirect_to @user_answer, notice: 'User answer was successfully created.' }
+        format.html { redirect_to user_challenges_path(:pre_challenge_id => @user_answer.user_challenge.challenge.pre_challenge_id) }
         format.json { render :show, status: :created, location: @user_answer }
       else
         format.html { render :new }
