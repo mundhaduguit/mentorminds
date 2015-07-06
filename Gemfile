@@ -9,7 +9,7 @@ gem 'royce'
 #gem 'sqlite3'
 gem 'mysql2'
 #gem 'pg'
-
+gem 'capistrano'
 gem "rails-erd"
 # Use SCSS for stylesheets
 gem 'sass-rails'
