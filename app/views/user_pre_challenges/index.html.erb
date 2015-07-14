@@ -11,7 +11,7 @@
 <div class="challenge-logo">
   <div style="font-size: 30px;">
   <%= image_tag "mm_logo.png", class: "img-circle" %>
-  Challenges
+  Challenge
   </div>
 </div>
 <% if @pre_challenges.present? %>
@@ -20,7 +20,7 @@
     <% @pre_challenges.each_with_index do |pre_challenge,i| %>
          <% if i<2 %>
           <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
-            <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id) %>     
+            <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
           </div>
         <% else %>
           <div class="rcorners1 locked" style="margin: 10px 10px 10px 50px; float:left;opacity: 0.5;">

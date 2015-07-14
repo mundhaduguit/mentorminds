@@ -14,7 +14,16 @@ class UserChallengesController < ApplicationController
       UserChallenge.create(user_id: current_user.id, challenge_id: challenge_id) if UserChallenge.where(user_id: current_user.id, challenge_id: challenge_id).blank?
     end
     @user_challenges = UserChallenge.where("challenge_id in (?)", challenge_ids)
-
+    flag=true
+    if params[:from_first].blank?
+    @user_challenges.each{|ch|
+    break if ch.user_answer.blank?
+    if ch.user_answer.present? || ch.user_answer.status!="in progress" || ch.user_answer.status!="done"
+      flag=false;
+    end
+    }
+    end
+    redirect_to progress_user_challenges_path unless flag
     @user_answer = UserAnswer.new
   end
 

@@ -45,14 +45,14 @@
           <% end %>
         </table>
       <% total_count = @user_answers.size %>
-      <% percenatge = rank_position == 0 ? 0 : (((total_count - rank_position)*100)/total_count)%>
+      <% percenatge = rank_position == 0 ? 0 : (((total_count - rank_position)*100)/total_count) unless total_count==0%>
       
       100% Percentage of MentorMind Users you Outrank
       <div class="lb_complete_div">
         <div class="lb_percentage_div" style="width: <%= percenatge %>%"></div>
       </div>
       
-      <% rank_percenatge = ((rank_position*100)/total_count)%>
+      <% rank_percenatge = ((rank_position*100)/total_count) unless total_count==0%>
       <div class="clearfix"></div>
       Your Rank among all MentorMind Users on Marketing <%= rank_position == 0 ? "" : rank_position %>
       <div class="lb_complete_div">

@@ -44,8 +44,8 @@
     </div>
   </div>
 
-<div class="industory_categories_div">
-	<div style="font-size: 50px; color:#ffffff"><b>Industry Category</b></div>
+<div class="industory_categories_div" style="border-radius: 20px;">
+	<div style="font-size: 50px; color:#ffffff;"><b>Industries</b></div>
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
@@ -55,7 +55,7 @@
 	<br>
 	<br>
 	<br>
-	<div class="row">
+	<div class="row" >
 	  <% @industry_categories.each do |industry_category| %>
   		<a href=<%= industry_category_path(industry_category) %>>
   			<div class="industory_category_div" style="width: 23%;float: left;">
