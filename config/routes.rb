@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   resources :pictures
   resources :users
   resources :industries do
-    resources :user_answers, shallow: true
+    resources :user_answers#, shallow: true
   end
+  resources :user_answers
   resources :industry_categories do
     collection do
       get "categories_list"
