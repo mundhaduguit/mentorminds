@@ -32,9 +32,9 @@
   # POST /user_answers.json
   def create
     @user = current_user
- 
+    #@user_challenge = UserChallenge.find(params[:user_challenge_id])
     @user_answer = UserAnswer.new(user_answer_params)
-    #@user_answer = @challenge.user_answers.create(user_answer_params)
+    #@user_answer = @user_challenge.user_answer.create(user_answer_params)
 
     respond_to do |format|
       if @user_answer.save

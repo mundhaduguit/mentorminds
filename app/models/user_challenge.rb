@@ -11,4 +11,4 @@ private
   def set_score
   	self.marks = 1000
   end
- end
+end
