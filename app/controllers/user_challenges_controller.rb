@@ -22,8 +22,8 @@ class UserChallengesController < ApplicationController
           flag=false;
         end
       }
-      end
-    redirect_to progress_user_challenges_path unless flag
+    end
+    #redirect_to progress_user_challenges_path unless flag
     @user_answer = UserAnswer.new
   end
 

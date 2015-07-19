@@ -1,7 +1,7 @@
 <br>
 
 
-<% if @user_challenges.present? %>
+  <% if @user_challenges.present? %>
 
     <div style = "margin-left: 200px;color: #0066cc;font-size: 20px;font-weight: bold;float: left;">Score:</div>
     <div class="score" first_day = "<%= @pre_challenge.first_date %>" style = "color: #0066cc;font-size: 20px;font-weight: bold;float: left;">1000 </div>
@@ -68,9 +68,7 @@
       </div>
     </div>
     </div>
-<% end %>
-
-
+  <% end %>
 
 <div class="modal fade" id="video_link" role="dialog" aria-labelledby="video_linkLabel" aria-hidden="true">
   <div class="modal-dialog">
