@@ -8,7 +8,6 @@ class Challenge < ActiveRecord::Base
 
   def set_industry_id
   	ids = "Select industry_id from pre_challenges where id = #{self.pre_challenge_id} "
-
   	industry_id_in_challenge = Industry.where("id IN (#{ids})").take.id
   	self.industry_id = industry_id_in_challenge
   end
