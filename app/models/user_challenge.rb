@@ -16,14 +16,6 @@ class UserChallenge < ActiveRecord::Base
   	self.locked = "done"
   end
 
-  	def user_answer_status_done
-	  	query = "select status from user_answers where (user_id AND user_challenge_id) = (#{self.id} AND #{self.user_id})"
-	  	a = UserAnswer.where("status IN #{query}")
-	  	puts "==================================="
-	  	puts a
-	  	puts "==================================="
-	  	return true
-	end
 
 	private
 
