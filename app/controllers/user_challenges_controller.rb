@@ -31,7 +31,7 @@ class UserChallengesController < ApplicationController
       end
     end
 
-    redirect_to progress_user_challenges_path if a == true
+    #redirect_to progress_user_challenges_path if a == true
     @user_answer = UserAnswer.new
   end
 

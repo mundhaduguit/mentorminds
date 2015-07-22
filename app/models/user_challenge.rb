@@ -6,6 +6,7 @@ class UserChallenge < ActiveRecord::Base
   resourcify
   belongs_to :user
   belongs_to :challenge
+  belongs_to :user_pre_challenge
   has_one :user_answer
 
   def set_status_progress

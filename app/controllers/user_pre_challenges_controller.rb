@@ -8,6 +8,15 @@ class UserPreChallengesController < ApplicationController
     @user_pre_challenges = UserPreChallenge.all
     @pre_challenges = PreChallenge.where(:industry_id => params[:company_id].to_i)
     @industry = Industry.find(params[:company_id])
+
+    @pre_challenges.each_with_index do |id, i|
+      if i < 2
+        UserPreChallenge.create(user_id: current_user.id, pre_challenge_id: id.id) if UserPreChallenge.where(user_id: current_user.id, pre_challenge_id: id.id).blank?
+      end
+    end
+
+    @a = current_user.user_challenges.where("locked = ?", "in progress")
+    @b =  @a.all? { |e| e.locked == "done" }
   end
 
   # GET /user_pre_challenges/1
