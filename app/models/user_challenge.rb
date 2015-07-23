@@ -1,7 +1,7 @@
 class UserChallenge < ActiveRecord::Base
   before_save :set_score
   before_create :set_status_progress #executes only first time when the object is instantiated
-  before_save :user_answer_status_done # in user answer table
+  #before_save :user_answer_status_done # in user answer table
 
   resourcify
   belongs_to :user

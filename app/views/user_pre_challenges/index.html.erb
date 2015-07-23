@@ -22,14 +22,11 @@
           <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
             <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
           </div>
-        <%# elsif i>=2 && @b %>
-          <%# @a.each do |x| %>
-            <%# if x.locked == "done" %><!--
-              <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
-                <%= pre_challenge.name %>
-              </div> -->
-            <%# end -%>
-          <%# end -%>
+        <% elsif @b && i==2 %>
+ <%# unlock the only next challenge %>
+          <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
+            <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
+          </div>
         <% else %>
           <div class="rcorners1 locked" style="margin: 10px 10px 10px 50px; float:left;opacity: 0.5;">
            <h3>Locked</h3>

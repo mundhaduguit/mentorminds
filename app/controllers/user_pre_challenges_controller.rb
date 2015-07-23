@@ -17,6 +17,7 @@ class UserPreChallengesController < ApplicationController
 
     @a = current_user.user_challenges.where("locked = ?", "in progress")
     @b =  @a.all? { |e| e.locked == "done" }
+
   end
 
   # GET /user_pre_challenges/1
