@@ -88,8 +88,8 @@ end
   
     devise_for :users, path: "mentor_minds", controllers: {sessions: "users/sessions", 
                         registrations: "users/registrations", passwords: "users/passwords", 
-                        confirmations: "users/confirmations", unlocks: "users/unlocks"},
-                         path_names: {sign_in: 'login', sign_out: 'logout', 
+                        confirmations: "users/confirmations", unlocks: "users/unlocks", 
+                        omniauth_callbacks: "omniauth_callbacks"},path_names: {sign_in: 'login', sign_out: 'logout', 
                           sign_up: 'user/registration'}
 
   unauthenticated do

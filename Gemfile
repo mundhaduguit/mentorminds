@@ -57,3 +57,7 @@ gem 'acts_as_tree'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+gem 'omniauth-facebook'
+
+gem 'omniauth'
+gem "omniauth-google-oauth2"

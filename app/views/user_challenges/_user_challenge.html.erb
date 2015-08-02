@@ -10,16 +10,15 @@
 
 <div class="answer">
 
+  <!-- <%# link_to "Answer this", new_user_challenge_path(user_challenge.id)%> -->
+  <!--          <%# link_to "Answer this", new_industry_user_answer_path(:industry_id => user_challenge.challenge.pre_challenge.industry_id,:user_challenge_id =>user_challenge.id)%> -->
 
-
-
-  <!-- <% link_to "Answer this", new_user_challenge_path(user_challenge.id)%> -->
-  <!--          <%=link_to "Answer this", new_industry_user_answer_path(:industry_id => user_challenge.challenge.pre_challenge.industry_id,:user_challenge_id =>user_challenge.id)%> -->
-
+<!-- remove the answer submit button
   <input value = "Answer This" type="button" class="btn change_user_id" data-toggle="modal" data-target="#myModal_<%=user_challenge.id%>" userChallenge = "<%= user_challenge.id %>" />
-                        
-</div>
+-->                    
 
+</div>
+<!--
 <div class="modal fade" id="myModal_<%=user_challenge.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -31,9 +30,17 @@
         <% @user_answer = user_challenge.user_answer if user_challenge.user_answer.present?%>
         <%@flag= true%>
         <% @user_challenge_id = user_challenge.id %>
-        <%= render 'user_answers/form' %>
+        <%# render 'user_answers/form' %>
       </div>
 
     </div>
   </div>
 </div>
+-->
+
+      <div class="user_answer" style="margin-top:45%;">
+        <% @user_answer = user_challenge.user_answer if user_challenge.user_answer.present?%>
+        <%@flag= true%>
+        <% @user_challenge_id = user_challenge.id %>
+        <%= render 'user_answers/form' %>
+      </div>

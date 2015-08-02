@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722090933) do
+ActiveRecord::Schema.define(version: 20150802014027) do
 
   create_table "challenges", force: :cascade do |t|
     t.text     "question"
@@ -118,11 +118,15 @@ ActiveRecord::Schema.define(version: 20150722090933) do
     t.text     "answer"
     t.integer  "user_id"
     t.integer  "user_challenge_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "status"
     t.decimal  "marks"
     t.integer  "industry_id"
+    t.string   "uploades_file_name"
+    t.string   "uploades_content_type"
+    t.integer  "uploades_file_size"
+    t.datetime "uploades_updated_at"
   end
 
   add_index "user_answers", ["user_challenge_id"], name: "index_user_answers_on_user_challenge_id"
@@ -179,6 +183,8 @@ ActiveRecord::Schema.define(version: 20150722090933) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "flag",                   default: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
