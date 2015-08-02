@@ -65,9 +65,9 @@
 					
 					                                    <div class="col-sm-12 controls" style="margin-bottom:20px">
 					                                    	 <%= f.submit "Log in",class: "btn btn-success" %>
-					                                      	 <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-					                           <%= link_to "Login using facebook", user_omniauth_authorize_path(:provider => :facebook), id: "sign in" %>
-					                           <%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in" %>
+					                 <a id="btn-fblogin" href="<%= user_omniauth_authorize_path(:provider => :facebook) %>" class="btn btn-primary">Login with Facebook</a>
+					                    
+					                           <%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %>
 					                                      	 <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a>
 
 														  															  
@@ -132,7 +132,7 @@
                                 <div class="form-group">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp; Sign Up</button>
                                         <span style="margin-left:8px;">or</span>  
                                     </div>
                                 </div>
