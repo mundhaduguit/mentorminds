@@ -15,6 +15,7 @@ class UserChallengesController < ApplicationController
     end
     @user_challenges = UserChallenge.where("challenge_id in (?)", challenge_ids)
     flag=true
+    a = false
     if params[:from_first].blank?
       @user_challenges.each{|ch|
         break if ch.user_answer.blank?
@@ -23,7 +24,14 @@ class UserChallengesController < ApplicationController
         end
       }
     end
-    #redirect_to progress_user_challenges_path unless flag
+
+    @user_challenges.each do |x|
+      if x.locked == "done" && current_user.id == x.user_id
+        a = true
+      end
+    end
+
+    #redirect_to progress_user_challenges_path if a == true
     @user_answer = UserAnswer.new
   end
 

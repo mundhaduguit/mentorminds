@@ -16,9 +16,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :answer, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :answer, :class => 'form-control' %>
+    <div class="col-lg-10" style="margin-left:10%;">
+      <%= f.file_field :upload %>
     </div>
     <%=f.error_span(:answer) %>
   </div>
@@ -65,7 +64,7 @@
   <% end %>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit "Submit answer", :class => 'btn btn-primary' %>
 
     </div>
   </div>

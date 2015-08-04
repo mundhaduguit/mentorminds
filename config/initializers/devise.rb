@@ -1,3 +1,4 @@
+require "omniauth-google-oauth2"
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -233,7 +234,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+    config.omniauth :facebook, '1667191846842238', '73525d1e04d4cc183c02fa702d6de204',
+                               :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+    config.omniauth :google_oauth2, "1055814481770-lhdbosheonv67tk4gq7plh12ekp8khta.apps.googleusercontent.com", "gSDoiy3DeALGADMwhOBeG5iR", { }
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
