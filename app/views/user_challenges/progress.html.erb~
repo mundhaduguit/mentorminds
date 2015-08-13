@@ -1,0 +1,49 @@
+<div class="progress_main_div">
+	<div class="progress_top">
+		<div class="links_progress_top">
+		  <%= "Find challenge"%>&nbsp;&nbsp;
+		  <%= "Explore an industory"%>&nbsp;&nbsp;
+		  User : <%= current_user.user_name %>&nbsp;&nbsp;
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="progress_second">
+		<div class="progress_second_left">
+      <h4><%=link_to "Overview", progress_user_challenges_path %></h4>
+			</br>
+			<%=link_to "How you comapare", leader_board_user_challenges_path %>
+		</div>
+		<div class="progress_second_middle">
+			<div class="current_industry">
+				<%= "CURRENT INDUSTRY PROGRESS"%></br></br>
+				<% @user_current_industries.each_with_index do |user_current_industry,index| %>
+					<div class="clearfix"></div>
+					<% industry_category = find_industry_category(user_current_industry.industry_category_id) %>
+					<% if industry_category.present? %>
+						<%= image_tag industry_category.image.url(:medium),class: "circle_div" %>
+						<% industry_category.industries.each do |industry| %>
+							<%= image_tag industry.image.url(:medium),class: "medium_circle_div" %>
+						<% end %>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="recently_played">
+				<%= "RECENTLY PLAYED"%></br></br>
+				<div class="circle_with_info">
+					<div class="circle_div" style="float: left"></div>
+					<div class="played_info">
+						<%= "Completed Challenge On: No. of Days to Complete Challenge:Rank in ICCC Challenge:"%>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="progress_second_right">
+			<%= "INDUSTRIES ACCESSED"%></br></br>
+			<% @user_accessed_industries.each do |user_accessed_industry| %>
+				<%= link_to (image_tag user_accessed_industry.industry_category.image.url(:medium), class: "circle_div"), industry_category_path(user_accessed_industry.industry_category) %>
+				<div class="clearfix"></div>
+			<% end %>	
+		</div>
+	</div>
+</div>
+

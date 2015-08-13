@@ -14,22 +14,11 @@
  *= require font-awesome
  */
 
-.bg-progress{
-    background-image: url("mentee_bg.png")
-    /*mentee_bg.png*/
-}
-
-.bg-industries{
-    background-image: url("ind_bg.png")
-    /*mentee_bg.png*/
-}
-
-
 html{
     height: 100%;
 }
 #navigation{
-height: 70px;
+height: 20%;
 }
 body{
     height: 100%;
@@ -86,21 +75,13 @@ body{
 	padding: 20px;
 }
 
-.sub_categories_and_companies_div{
-	margin: 0 auto;
-	width: 80%;
-	text-align: left;
-	padding: 20px;
-	background-color: #AEB6C2;
-}
-
 .industory_categories_and_companies_new{
 	width: 100%
 }
 
 .industory_category_div_new{
 	width: 100px;
-	/*background-color: #337ab7;*/
+	background-color: #337ab7;
 	border-radius: 5px;
 	float: left;
 	min-width: 750px;
@@ -111,10 +92,9 @@ body{
 
 .ic_left_new{
 	width: 100%;
-	height: 40px;
-	line-height: 40px;
+	height:50px;
+	line-height: 50px;
 	float: left;
-	text-align: center;
 }
 
 
@@ -134,7 +114,7 @@ body{
 .industory_categories_div{
 	margin: 0 auto;
 	width: 80%;
-	/*background: #337ab7;*/
+	background: #337ab7;
 	text-align: left;
 	padding: 20px;
 }
@@ -149,9 +129,8 @@ body{
 .ic_left{
 	width: 49%;
 	height:150px;
-	/*line-height: 150px;*/
+	line-height: 150px;
 	float: left;
-	margin-top: 25%;
 }
 .ic_img_right{
 	width: 50%;
@@ -162,13 +141,12 @@ body{
 
 .ic_companies{
 	float: left;
-	width: 23%;
+	width: 20%;
 	text-align: center;
 	/*border-style: solid;
     border-width: 2px;*/
     height: 100px;
     margin-left: 10px;
-    margin-bottom: 10px;
 }
 
 .text-align-center{
@@ -184,8 +162,8 @@ body{
 .companies_dispaly_div{
 	/*border-style: solid;
 	border-width: 2px;*/
-	width: 750px;
-	background: #AEB6C2;
+	width: 800px;
+	background: #FFFFFF;
 	display:none;
 }
 .image_company{
@@ -225,7 +203,7 @@ body{
 	border-width: 2px;
 	margin: 5px 0px 0px 20px;
 	float: left;
-	background-image: url("flower.jpg");
+	background-image: url("flower.jpg")
 }
 .small_circle_div{
 	height: 30px;
@@ -238,11 +216,11 @@ body{
 	
 }
 .medium_circle_div{
-	height: 55px;
-	width: 55px;
-	border-radius:28px;
+	height: 40px;
+	width: 40px;
+	border-radius:20px;
 	border-style: solid;
-	border-width: 4px;
+	border-width: 2px;
 	margin-left: 20px;
 	margin-top: 10px;
 	float: left;
@@ -269,8 +247,7 @@ body{
 	min-height:400px;
 	float: left;
 	padding: 15px;
-	border-right-style: solid;
-    border-color: yellow;
+	border-right-style: dotted;
 	border-right-width: 2px;
 	
 }
@@ -290,17 +267,12 @@ body{
 	width:100%
 	float:left;
 	min-height:130px;
-    border-bottom: solid;
-    border-right: solid;
-    border-color: #ffff00;
 	
 }
 .recently_played{
 	width:100%
 	min-height:100px;
 	float:left;
-    border-right: solid;
-    border-color: #ffff00;
 }
 
 .played_info{
@@ -332,18 +304,22 @@ body{
 }
 
 .pre-challenge-square{
-	margin: 0 auto;
-	width: 80%;
-	text-align: left;
-	padding: 20px;
-	background-color:#AEB6C2;
+	display: table;
+	float: left;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  left: 30%;
+  top: 45%;
+  background: #4679BD;
 }
 
 .challenge-logo{
-	margin: 0 auto;
-	width: 80%;
-	text-align: center;
-	padding: 20px;
+	display: table;
+  position: relative;
+  left: 40%;
+  top: 10%;
+  margin-bottom: 10px;
 }
 
 .challenge-logo img{
@@ -476,47 +452,4 @@ body{
 }
 .ind_div{
 	background-color: #D0E6E6;
-}
-
-
-
-
-
-
-/* flip content */
-/* entire container, keeps perspective */
-
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-    transform: rotateY(180deg);
-}
-
-
-/* flip speed goes here */
-.flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-
-    position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-    backface-visibility: hidden;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-    transform: rotateY(180deg);
 }

@@ -3,6 +3,7 @@ class IndustryCategoriesController < ApplicationController
   before_action :save_industry
   # GET /industry_categories
   # GET /industry_categories.json
+  layout "industries", only: [:index]
   def index
     @industry_categories = IndustryCategory.where("parent_id = ?", 0)
   end

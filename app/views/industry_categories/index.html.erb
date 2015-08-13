@@ -45,7 +45,7 @@
   </div>
 
 <div class="industory_categories_div" style="border-radius: 20px;">
-	<div style="font-size: 50px; color:#ffffff;"><b>Industries</b></div>
+	<%= image_tag "industries.png"  %>
 	<!--<div class="industory_categories_maindiv">
 		
 	</div>-->
@@ -58,21 +58,39 @@
 	<div class="row" >
 	  <% @industry_categories.each do |industry_category| %>
   		<a href=<%= industry_category_path(industry_category) %>>
-  			<div class="industory_category_div" style="width: 23%;float: left;">
-  		      <div class="ic_left">
-  		      	<%= industry_category.name %>
-  		      </div>
-  		      <div class="ic_img_right">
-  		      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
-  		      </div>
-  		      
-  		      <!--<div class="col-md-3">
-  		        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
-  		        <%= industry_category.name %>
-  		        <td><%= link_to 'Show', industry_category %></td>
-  		      </div>-->
-  			</div>
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+            <div class="industory_category_div " style="width: 23%;float: left;border: double;">
+                  <div class="flipper">
+                    <div class="front">
+                        <div class="ic_left">
+                            <%= industry_category.name %>
+                          </div>
+                          <div class="ic_img_right">
+                            <%= image_tag industry_category.image.url(:medium), class: "img-rounded", height: 100, width: 200 %>
+                          </div>
+
+                      <!--<div class="col-md-3">
+                        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"100",:width=>"100" %><br /></a>
+                            <%= industry_category.name %>
+                            <td><%= link_to 'Show', industry_category %></td>
+
+                      </div>-->
+                    </div>
+                    <div class="back" style="float: left;">
+                      36 Challenges<br>
+                      14 people
+                    </div>
+                </div>
+
+            </div>
+          </div>
   		</a>
 	  <% end %>
 	</div>
 </div>
+
+
+
+
+

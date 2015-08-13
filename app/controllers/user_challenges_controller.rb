@@ -2,6 +2,7 @@ class UserChallengesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_challenge, only: [:show, :edit, :update, :destroy]
   before_action :create_user_challenges, only: [:index]
+  layout "user", only: [:progress, :leader_board]
   # GET /user_challenges
   # GET /user_challenges.json
   def index
