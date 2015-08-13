@@ -2,6 +2,7 @@ class IndustriesController < ApplicationController
 
   # GET /industries
   # GET /industries.json
+
   def index
     #@industries = Industry.all
     @industries = Industry.where("industry_category_id = ?", params[:id])   #temporarily changed

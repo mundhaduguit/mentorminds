@@ -21,6 +21,8 @@ module MentorMinds
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    Rails.application.config.assets.precompile += %w( common.css )
+    Rails.application.config.assets.precompile += %w( demo.css style3.css modernizr.custom.79639.js )
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end

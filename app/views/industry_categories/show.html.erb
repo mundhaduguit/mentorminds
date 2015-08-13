@@ -44,42 +44,45 @@
 	<br>
 	<div class="sub_categories_and_companies_div">
 		<div class="row">
-		  <% @industry_sub_categories.each do |industry_category| %>
-			<div class="industory_categories_and_companies_new">
-				<div class="industory_category_div_new" id ="<%=industry_category.id %>" onclick="show_companies(<%=industry_category.id %>);">
-			      <div class="ic_left_new">
-			      	<!-- <div class="glyphicon glyphicon-chevron-right"></div> -->
-			      	<%= industry_category.name %>
-			      </div>
-			      <!--<div class="ic_img_right">
-			      	<%= image_tag industry_category.image.url(:medium), class: "img-rounded" %>
-			      </div> -->
-			    </div>  
-			      <div class="clear"></div>
-			      <% @companies = industry_category.industries %>
+          <section class="main">
+            <ul class="ch-grid">
+		   <% @industry_sub_categories.each_with_index do  |industry_category,i| %>
 
-			      <!--<div class="col-md-3">
-			        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"220",:width=>"220" %><br /></a>
-			        <%= industry_category.name %>
-			        <td><%= link_to 'Show', industry_category %></td>
-			      </div>-->
-	              <div class="companies_dispaly_div" id="companies_list_<%=industry_category.id %>">
-		              <% if @companies.present? %>
-						
-		                    <% @companies.each do |company| %>
-		                        <div class="ic_companies" style="color: #730E15; background-color: #ffffff" >
-		                            <div class="image_company">
-		                            	<%= image_tag company.image.url(:medium), class: "img-rounded" %>
-		                            </div>
-		                            <%= link_to company.name, user_pre_challenges_path(:company_id => company.id)%>
-		                        </div>
-		                        
-		                    <%end%>
-		                	<div class="clearfix"></div>
-		              <%end %>
-		          </div>
-		       </div>   
+                  <li>
+                    <div class="ch-item">
+                      <div class="ch-info">
+                        <% @companies = industry_category.industries %>
+                        <% if @companies.present? %>
+                            <br><br>
+                            <% @companies.each do |company| %>
+                                <%= link_to "#{ image_tag company.image.url(:thumb)}".html_safe, user_pre_challenges_path(:company_id => company.id)%>
+                                <%= link_to "#{ image_tag company.image.url(:thumb)}".html_safe, user_pre_challenges_path(:company_id => company.id)%>
+                            <% end %>
+                        <% end %>
+                      </div>
+                      <div class="ch-thumb ch-img-1"><br><br> <%= image_tag industry_category.image.url(:thumb) %> </div>
+                    </div>
+                  </li>
+
+
+
 		  <% end %>
+            </ul>
+          </section>
 		</div>
 	</div>	
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

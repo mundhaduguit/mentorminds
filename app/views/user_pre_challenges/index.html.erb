@@ -16,25 +16,57 @@
 </div>
 <% if @pre_challenges.present? %>
   <div class="pre-challenge-square">
+    <section class="main">
 
+      <ul class="ch-grid">
     <% @pre_challenges.each_with_index do |pre_challenge,i| %>
          <% if i<2 %>
-          <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
-            <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
-          </div>
+
+                <li>
+                  <div class="ch-item">
+                    <div class="ch-info"><br><br>
+                      <%= link_to "Challenge", user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
+                    </div>
+                    <div class="ch-thumb ch-img-1">
+                      <p><%= pre_challenge.name %></p><br>
+                    </div>
+                  </div>
+                </li>
+
+
         <% elsif @b && i==2 %>
  <%# unlock the only next challenge %>
-          <div class="rcorners1" style="margin: 10px 10px 10px 50px; float:left;">
-            <%= link_to pre_challenge.name, user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
-          </div>
+                <li>
+                  <div class="ch-item">
+                    <div class="ch-info"><br><br>
+                      <%= link_to "Challenge", user_challenges_path(:pre_challenge_id => pre_challenge.id, :from_first => "true") %>
+                    </div>
+                    <div class="ch-thumb ch-img-1">
+                      <p><%= pre_challenge.name %></p><br>
+
+                    </div>
+                  </div>
+                </li>
+
         <% else %>
-          <div class="rcorners1 locked" style="margin: 10px 10px 10px 50px; float:left;opacity: 0.5;">
-           <h3>Locked</h3>
-           <%= pre_challenge.name %>
-          </div>
+                <li>
+                  <div class="ch-item">
+                    <div class="ch-info">
+                      <h3>Locked</h3>
+                      <p><%= "Challenge" %></p>
+                    </div>
+                    <div class="ch-thumb ch-img-1">
+                      <p><%= pre_challenge.name %></p><br>
+                      Locked
+                    </div>
+                  </div>
+                </li>
          <% end %>
         
     <% end %>
+      </ul>
+
+    </section>
     <div class="clearfix"></div>
   </div>
 <% else%>

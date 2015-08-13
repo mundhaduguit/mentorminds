@@ -19,6 +19,7 @@ $( document ).ready(function() {
       pixlr.settings.exit = 'http://localhost:3000';
       pixlr.settings.method = 'GET';
       pixlr.settings.redirect = false;
+    $(".locked").children().attr('disabled', 'disabled');
     $('.next').click(function () {
         $('.active').removeClass('active').toggle( "slide" )
             .next().toggle( "slide" ).addClass('active');
