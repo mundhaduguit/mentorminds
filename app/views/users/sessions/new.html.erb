@@ -1,20 +1,23 @@
 <div class="container">
 	<section>
 		<div class="main_page_section_1">
+			<div align="center" style="margin-top:-5%;">
+				<%= image_tag( :mm_logo,  height: '128', width: '128') %><br><br>
+			</div>
 			<div class="container">
 				<div class="col-md-6" align="center">
 					<div class="container" style="margin-left:12%;">
-						<%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %><br><br>
-						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:provider => :facebook), id: "sign in", class: "btn btn-primary" %>
+						<a class="btn btn-danger" href="<%= user_omniauth_authorize_path(:provider => :google_oauth2) %>"><i class="fa fa-google-plus"> </i>&nbsp;login with Gmail</a><br><br>
+						<a class="btn btn-primary" href="<%= user_omniauth_authorize_path(:provider => :facebook) %>"><i class="fa fa-facebook-official"></i> login with facebook</a>
 					</div>
 				</div>
 
 				<div class="col-md-6">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 						<div class="input-group">
-							<%= f.email_field :email, autofocus: true, class: "form-control" %>
+							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID" %>
 							<% if f.object.password_required? %>											    		
-								<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password" %>
 							<% end -%>
 						</div>
 							<div class="input-group">
@@ -49,7 +52,7 @@
 		</div>
 	</section>
 							<!-- 2nd section -->
-	<section>
+	<section id="features" class="features">
 		<div class="container main_page_section_2">
 			<div class="container">
 				<div class="col-md-6">
@@ -70,7 +73,7 @@
 
 	<!-- Section 3 -->
 
-	<section>
+	<section id="team" class="team">
 		<div class="container main_page_section_3">
 			<div class="col-md-6" align="center">
 				<p>
@@ -111,7 +114,7 @@
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
 							<%= image_tag("dd") %>
-							<%= User.first.email %>
+							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
 					</div>	
@@ -122,7 +125,7 @@
 					<%= User.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
-							<%= User.first.email %>
+							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
 					</div>
@@ -133,7 +136,7 @@
 					<%= Industry.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
-							<%= User.first.email %>
+							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
 					</div>
@@ -144,7 +147,7 @@
 					<%= Challenge.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
-							<%= User.first.email %>
+							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 
 						</p>
@@ -154,7 +157,7 @@
 		</div>
 	</section>
 	<!-- Section 5 -->
-	<section>
+	<section id="works" class="works clearfix">
 		<div class="container main_page_section_5">
 		<% @industry_categories = IndustryCategory.where("parent_id = ?", 0) %>
 			<%= render "/industry_categories/home_page_content" %>
@@ -165,20 +168,23 @@
 
 	<section>
 		<div class="main_page_section_6">
+			<div align="center">
+				<%= image_tag( :mm_logo,  height: '128', width: '128') %><br><br>
+			</div>
 			<div class="container">
 				<div class="col-md-6" align="center">
 					<div class="container" style="margin-left:12%;">
-						<%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %><br><br>
-						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:provider => :facebook), id: "sign in", class: "btn btn-primary" %>
+						<a class="btn btn-danger" href="<%= user_omniauth_authorize_path(:provider => :google_oauth2) %>"><i class="fa fa-google-plus"> </i>&nbsp;login with Gmail</a><br><br>
+						<a class="btn btn-primary" href="<%= user_omniauth_authorize_path(:provider => :facebook) %>"><i class="fa fa-facebook-official"></i> login with facebook</a>
 					</div>
 				</div>
 
 				<div class="col-md-6">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 						<div class="input-group">
-							<%= f.email_field :email, autofocus: true, class: "form-control" %>
+							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID" %>
 							<% if f.object.password_required? %>											    		
-								<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password" %>
 							<% end -%>
 						</div>
 							<div class="input-group">
