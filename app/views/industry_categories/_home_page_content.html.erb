@@ -1,0 +1,96 @@
+<!--<p id="notice"><%= notice %></p>
+
+<h1>Listing Industry Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @industry_categories.each do |industry_category| %>
+      <tr>
+        <td><%= industry_category.name %></td>
+        <td><%= industry_category.description %></td>
+        <td><%= industry_category.parent_id %></td>
+        <td><%= link_to 'Show', industry_category %></td>
+        <td><%= link_to 'Edit', edit_industry_category_path(industry_category) %></td>
+        <td><%= link_to 'Destroy', industry_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="item active background_top" style="background-image: url(assets/home.jpg); height: 180px">
+</div>
+<br>-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-6 col-md-2">
+      Find a Challenge
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Explore an Industry", industry_categories_path %>
+    </div>
+    <div class="col-md-2">
+      User Name
+    </div>
+    <div class="col-md-12">&nbsp;<br>&nbsp;</div>
+
+    </div>
+  </div>
+
+<div class="industory_categories_div" style="border-radius: 20px;">
+	<%= image_tag "industries.png"  %>
+	<!--<div class="industory_categories_maindiv">
+		
+	</div>-->
+	<style>
+	    .circle-border {width:199px; height:199px; border-radius:100px; -moz-border-radius: 100px; -webkit-border-radius: 100px; -khtml-border-radius: 100px; font-size:20px; color:#fff; line-height:200px; text-align:center; background:#000; border: 1px solid #999; }
+	</style>
+	<br>
+	<br>
+	<br>
+	<div class="row" >
+	  <% @industry_categories.each do |industry_category| %>
+  		<a href=<%= industry_category_path(industry_category) %>>
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+            <div class="industory_category_div " style="width: 23%;float: left;border: double;">
+                  <div class="flipper">
+                    <div class="front">
+                        <div class="ic_left">
+                            <%= industry_category.name %>
+                          </div>
+                          <div class="ic_img_right">
+                            <%= image_tag industry_category.image.url(:medium), class: "img-rounded", height: 100, width: 200 %>
+                          </div>
+
+                      <!--<div class="col-md-3">
+                        <a href=<%= industry_category_path(industry_category) %>> <%= image_tag industry_category.image.url(:medium), class: "img-rounded",:height=>"100",:width=>"100" %><br /></a>
+                            <%= industry_category.name %>
+                            <td><%= link_to 'Show', industry_category %></td>
+
+                      </div>-->
+                    </div>
+                    <div class="back" style="float: left;">
+                      36 Challenges<br>
+                      14 people
+                    </div>
+                </div>
+
+            </div>
+          </div>
+  		</a>
+	  <% end %>
+	</div>
+</div>
+
+
+
+
+

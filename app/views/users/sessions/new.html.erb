@@ -1,503 +1,216 @@
-<!--
-        Home Slider
-        ==================================== -->
-		
-<section id="slider">
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			
-				<!-- Indicators bullet -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-		</ol>
-				<!-- End Indicators bullet -->				
-				
-				<!-- Wrapper for slides -->
-		<div class="carousel-inner" role="listbox">
-					
-					<!-- single slide -->
-
-		<div class="container" style="margin-top:18%;">
-			<div class="clearfix"></div>
-			<div class="col-md-6" align="center">
-				<a id="btn-fblogin" href="<%= user_omniauth_authorize_path(:provider => :facebook) %>" class="btn btn-primary">Login with Facebook</a>
-					          	<br>          
-				<%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %>
-			</div>
-
-			<div class="col-md-6">
-				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-					<div class="input-group">
-						<%= f.email_field :email, autofocus: true, class: "form-control" %>
-						<% if f.object.password_required? %>											    		
-							<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-						<% end -%>
+<div class="container">
+	<section>
+		<div class="main_page_section_1">
+			<div class="container">
+				<div class="col-md-6" align="center">
+					<div class="container" style="margin-left:12%;">
+						<%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %><br><br>
+						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:provider => :facebook), id: "sign in", class: "btn btn-primary" %>
 					</div>
+				</div>
+
+				<div class="col-md-6">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						<div class="input-group">
+							<%= f.email_field :email, autofocus: true, class: "form-control" %>
+							<% if f.object.password_required? %>											    		
+								<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+							<% end -%>
+						</div>
 							<div class="input-group">
 								<% if devise_mapping.rememberable? -%>
-									<div class="field">
+									<div class="field" align="center">
 										<label>
 											<%= f.check_box :remember_me %>
 												Remember me
-                                       	</label>
+			                             </label>
+			                             <br>
+			                            <a href="#" style="color:blue;">Forgot password?</a>
 									</div>
 								<% end -%>
-								<a href="#" style="color:blue;">Forgot password?</a>
 							</div>
 							<div style="margin-top:10px" class="form-group">
-																	  	
-					        <!-- Button -->
-					
-					        <div class="col-sm-12 controls" style="margin-bottom:20px">
-					            <%= f.submit "Log in",class: "btn btn-success" %>
-					            
-					            <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a>
+																			  	
+							        <!-- Button -->
+							
+							    <div class="col-sm-12 controls" style="margin-bottom:20px">
+							            <%= f.submit "Log in Now!",class: "btn btn-success" %>
+							            
+							            <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a>
 
-														  															  
-								<div class="actions"></div>
-					        </div>
-					</div>
-												 
-				<% end %>
+																  															  
+										<div class="actions"></div>
+							     </div>
+							</div>
+														 
+						<% end %>
+				</div>
 			</div>
 		</div>
-		s
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-info" style="position:relative; top:100px;">
-                        <div class="panel-heading">
-                            <div class="panel-title">Sign Up</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
-                        </div>  
-                        <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form">
-                                
-                                <div id="signupalert" style="display:none" class="alert alert-danger">
-                                    <p>Error:</p>
-                                    <span></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email" class="col-md-3 control-label">Email</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
-                                    </div>
-                                </div>
-                                    
-                                <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">First Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-md-3 control-label">Password</label>
-                                    <div class="col-md-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
-                                    </div>
-                                </div>
-                                    
-                                <div class="form-group">
-                                    <label for="icode" class="col-md-3 control-label">Invitation Code</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="icode" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <!-- Button -->                                        
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp; Sign Up</button>
-                                        <span style="margin-left:8px;">or</span>  
-                                    </div>
-                                </div>
-                                
-                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                                    
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                                    </div>                                           
-                                        
-                                </div>
-                                
-                                
-                                
-                            </form>
-                         </div>
-                    </div>
-
-               
-               
-                
-         </div> 
-    </div>
-						
-					</div>
-					<!-- end single slide -->					
-				</div>
-				<!-- End Wrapper for slides -->
-				
-			</div>
-		</section>
-		
-        <!--
-        End Home SliderEnd
-        ==================================== -->
-        
-
-
-<!--
-        Features
-        ==================================== -->
-		
-		<section id="features" class="features" style="background-image: url(assets/slide 2.jpg);">
-			<div class="container each-part-container" >
-				<div class="row">
-				
-					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
-						<h2>About Mentor Mind</h2>
-						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-					</div>
-
-					<!-- service item -->
-					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-about fa-2x"></i>
-							</div>
-							
-							<div class="service-desc">
-								<h3>Mentor Mind is</h3>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-							</div>
-						</div>
-					</div>
-					<!-- end service item -->
-					
-					<!-- service item -->
-					<div class="col-md-8 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
-						<div class="service-item">							
-							<div class="service-desc">
-
-							</div>
-						</div>
-					</div>
-					<!-- end service item -->						
-				</div>
-			</div>
-		</section>
-		
-        <!--
-        End Features
-        ==================================== -->
-		
-		
-       
-		
-        <!--
-        Meet Our Team
-        ==================================== -->		
-		
-		<section id="team" class="team">
-			<div class="container each-part-container">
-				<div class="row">
-		
-					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
-						<h2>Meet Our Team</h2>
-						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-					</div>
-					
-					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-					</div>
-
-					<!-- single member -->
-					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
-						<div class="member-thumb">
-							<img src="assets/team/member-1.png" alt="Team Member" class="img-responsive">
-							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
-								<ul class="social-links text-center">
-									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-								</ul>
-							</figcaption>
-						</div>
-						<h4>John Filmr Doe</h4>
-						<span>Managing Director</span>
-					</figure>
-					<!-- end single member -->
-					
-					<!-- single member -->
-					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-						<div class="member-thumb">
-							<img src="assets/team/member-2.png" alt="Team Member" class="img-responsive">
-							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
-								<ul class="social-links text-center">
-									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-								</ul>
-							</figcaption>
-						</div>
-						<h4>Martin Matrone</h4>
-						<span>Lead Developer</span>
-					</figure>
-					<!-- end single member -->
-					
-					<!-- single member -->
-					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
-						<div class="member-thumb">
-							<img src="assets/team/member-3.png" alt="Team Member" class="img-responsive">
-							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
-								<ul class="social-links text-center">
-									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-								</ul>
-							</figcaption>
-						</div>
-						<h4>Steve Flaulkin</h4>
-						<span>Sr. UI Designer</span>
-					</figure>
-					<!-- end single member -->
-					
-					<!-- single member -->
-					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
-						<div class="member-thumb">
-							<img src="assets/team/member-1.png" alt="Team Member" class="img-responsive">
-							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
-								<ul class="social-links text-center">
-									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-								</ul>
-							</figcaption>
-						</div>
-						<h4>John Filmr Doe</h4>
-						<span>Managing Director</span>
-					</figure>
-					<!-- end single member -->
-					
-				</div>
-			</div>
-		</section>
-		
-        <!--
-        End Meet Our Team
-        ==================================== -->
-<!--
-        Our Works
-        ==================================== -->
-		
-		<section id="works" class="works clearfix">
-			<div class="container each-part-container">
-				<div class="row" >
-				
-					<div class="sec-title text-center">
-						<h2>Industries</h2>
-						<div class="devider"></div>
-					</div>
-                  <div class="container-fluid" style = "background-color:#285e8e;">
-					<div  class="row" style="padding-bottom: 30px">
-                      <br>
-                      <br>
-                      <% IndustryCategory.all.each_with_index { |industry_category, i|  %>
-                          <div  class="col-xs-1 ">
-                          </div>
-                      <div style="border-style:double;" class="col-xs-3 img-thumbnail">
-                         
-                            <!-- Button trigger modal -->
-                            
-
-                            <!-- Modal -->
-                         
-                            <a  data-toggle="modal" data-target="#myModal">
-                              <%= image_tag industry_category.image.url(:medium),:height=>"200",:width=>"200" %>
-                            </a>
-
-
-
-                         
-
-                        </div>
-
-                          <% } %>
-                    <br/>
-
-					</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        	<div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  
-                  </div>
-                  <div class="modal-body">
-                    <a href="<%= new_user_session_path%>"><button type="button" class="btn btn-primary">Login</button></a>
-                    <button type="button" class="btn btn-primary">Go For Free demo</button>                   
-                  </div>
-
-                  <div class="modal-footer">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-        <!--
-        End Our Works
-        ==================================== -->	
-		
-		<!--
-        Contact Us
-        ==================================== -->		
-		
-		<section id="contact" class="contact">
-			<div class="container each-part-container">
-				<div class="row mb50">
-				
-					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
-						<h2>Let’s Discuss</h2>
-						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-					</div>
-					
-					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-					</div>
-					
-					<!-- contact address -->
-					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
-						<div class="contact-address">
-							<h3>Mentor Mind</h3>
-							<p>Hyderabad</p>
-							<p>Telangana</p>
-							<p>xx-xxxxxxxxxx</p>
-						</div>
-					</div>
-					<!-- end contact address -->
-					
-					<!-- contact form -->
-					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
-						<div class="contact-form">
-							<h3>Say hello!</h3>
-							<form action="#" id="contact-form">
-								<div class="input-group name-email">
-									<div class="input-field">
-										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
-									</div>
-									<div class="input-field">
-										<input type="email" name="email" id="email" placeholder="Email" class="form-control">
-									</div>
-								</div>
-								<div class="input-group">
-									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
-								</div>
-								<div class="input-group">
-									<input type="submit" id="form-submit" class="pull-right" value="Send message">
-								</div>
-							</form>
-						</div>
-					</div>
-					<!-- end contact form -->
-					
-					<!-- footer social links -->
-					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
-						<ul class="footer-social">
-							<li><a href="https://www.behance.net/Themefisher"><i class="fa fa-behance fa-2x"></i></a></li>
-							<li><a href="https://www.twitter.com/Themefisher"><i class="fa fa-twitter fa-2x"></i></a></li>
-							<li><a href="https://dribbble.com/themefisher"><i class="fa fa-dribbble fa-2x"></i></a></li>
-							<li><a href="https://www.facebook.com/Themefisher"><i class="fa fa-facebook fa-2x"></i></a></li>
-						</ul>
-					</div>
-					<!-- end footer social links -->
-					
-				</div>
-			</div>
-			
-			<!-- Google map -->
-			<div id="map_canvas" class="wow bounceInDown animated" data-wow-duration="500ms"></div>
-			<!-- End Google map -->
-			
-		</section>
-		
-        <!--
-        End Contact Us
-        ==================================== -->        
-
-<footer id="footer" class="footer">
+	</section>
+							<!-- 2nd section -->
+	<section>
+		<div class="container main_page_section_2">
 			<div class="container">
-				<!--<div class="row">
-				
-					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
-						<div class="footer-single">
-							<img src="assets/footer-logo.png" alt="">
-							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
+				<div class="col-md-6">
+					<div class="container" style="margin-top:15%;">
+						<%= image_tag( :mm_logo,  height: '128', width: '128') %><br>
+						Mentor Mind is a virtual platform for <br>-<br><br>-<br><br>-<br><br>-<br><br>-<br>
 					</div>
-				
-					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-						<div class="footer-single">
-							<h6>Subscribe </h6>
-							<form action="#" class="subscribe">
-								<input type="text" name="subscribe" id="subscribe">
-								<input type="submit" value="&#8594;" id="subs">
-							</form>
-							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-						</div>
+				</div>
+
+				<div class="col-md-6" style="margin-top:8%;">
+					<div class="container" align="center" style="margin-top:15%; margin-right:15%;">
+						<iframe width="500" height="300" src="https://www.youtube.com/embed/xqtUuHFAtzg" frameborder="1" allowfullscreen></iframe>
 					</div>
-				
-					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
-						<div class="footer-single">
-							<h6>Explore</h6>
-							<ul>
-								<li><a href="#">Inside Us</a></li>
-								<li><a href="#">Flickr</a></li>
-								<li><a href="#">Google</a></li>
-								<li><a href="#">Forum</a></li>
-							</ul>
-						</div>
-					</div>
-				
-					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
-						<div class="footer-single">
-							<h6>Support</h6>
-							<ul>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Market Blog</a></li>
-								<li><a href="#">Help Center</a></li>
-								<li><a href="#">Pressroom</a></li>
-							</ul>
-						</div>
-					</div>
-					
-				</div>-->
-				<div class="row">
-					<div class="col-md-12">
-						<p class="copyright text-center">
-							Copyright © 2015 <a href="#">Mentor Mind</a>. All rights reserved. Designed & developed by <a href="#"></a>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+	<!-- Section 3 -->
+
+	<section>
+		<div class="container main_page_section_3">
+			<div class="col-md-6" align="center">
+				<p>
+					<%= image_tag( :mm_logo,  height: '128', width: '128') %><br>
+					<b><h2>Industry mentor just for you</h2></b>
+					Interact with an industry professional for support during missions. Real time scenarios require real time experience guidance.
+				</p>
+				<p>
+					<%= image_tag( :mm_logo,  height: '128', width: '128') %><br>
+					<b><h2>Improve work Ethic</h2></b>
+					Stick to deadlines or lose points. Submit quality work or face the consequence of getting rejected. Build real world work ethic now.
+				</p>
+			</div>
+
+			<div class="col-md-6" align="center">
+				<p>
+					<%= image_tag( :mm_logo,  height: '128', width: '128') %><br>
+					<b><h2>Real Life Mision Simulations</h2></b>
+					Choose from real life simulated missions and turn in your solutions/output to earn points.
+				</p>
+				<p>
+					<%= image_tag( :mm_logo,  height: '128', width: '128') %><br>
+					<b><h2>How You Compare ?</h2></b>
+					See how you stack up against members from different colleges and cities.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 4 -->
+
+	<section>
+		<div class="container main_page_section_4">
+			<div class="container" style="margin-top:12%;">
+				<div class="col-md-3">
+					<h3>Mentor Organizations</h3>
+					<%= IndustryCategory.all.count %>
+					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
+						<p align="center">
+							<%= image_tag("dd") %>
+							<%= User.first.email %>
+							I was so happy I wanted to cry
+						</p>
+					</div>	
+				</div>
+
+				<div class="col-md-3">
+					<h3>Mentees</h3>
+					<%= User.all.count %>
+					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
+						<p align="center">
+							<%= User.first.email %>
+							I was so happy I wanted to cry
 						</p>
 					</div>
 				</div>
-			</div>
-		</footer>
-		
 
-		<!-- Custom Functions -->
-        
+				<div class="col-md-3">
+					<h3>Industries</h3>
+					<%= Industry.all.count %>
+					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
+						<p align="center">
+							<%= User.first.email %>
+							I was so happy I wanted to cry
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<h3>Challenges</h3>
+					<%= Challenge.all.count %>
+					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
+						<p align="center">
+							<%= User.first.email %>
+							I was so happy I wanted to cry
+
+						</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+	<!-- Section 5 -->
+	<section>
+		<div class="container main_page_section_5">
+		<% @industry_categories = IndustryCategory.where("parent_id = ?", 0) %>
+			<%= render "/industry_categories/home_page_content" %>
+		</div>
+	</section>
+
+	<!-- Section 6 -->
+
+	<section>
+		<div class="main_page_section_6">
+			<div class="container">
+				<div class="col-md-6" align="center">
+					<div class="container" style="margin-left:12%;">
+						<%= link_to "Sign in with Google", user_omniauth_authorize_path(:provider => :google_oauth2), id: "sign in", class: "btn btn-danger" %><br><br>
+						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:provider => :facebook), id: "sign in", class: "btn btn-primary" %>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						<div class="input-group">
+							<%= f.email_field :email, autofocus: true, class: "form-control" %>
+							<% if f.object.password_required? %>											    		
+								<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+							<% end -%>
+						</div>
+							<div class="input-group">
+								<% if devise_mapping.rememberable? -%>
+									<div class="field" align="center">
+										<label>
+											<%= f.check_box :remember_me %>
+												Remember me
+			                             </label>
+			                             <br>
+			                            <a href="#" style="color:blue;">Forgot password?</a>
+									</div>
+								<% end -%>
+							</div>
+							<div style="margin-top:10px" class="form-group">
+																			  	
+							        <!-- Button -->
+							
+							    <div class="col-sm-12 controls" style="margin-bottom:20px">
+							            <%= f.submit "Log in Now!",class: "btn btn-success" %>
+							            
+							            <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a>
+
+																  															  
+										<div class="actions"></div>
+							     </div>
+							</div>
+														 
+						<% end %>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
