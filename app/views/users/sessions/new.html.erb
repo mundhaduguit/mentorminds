@@ -113,7 +113,7 @@
 					<%= IndustryCategory.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
-							<%= image_tag("dd") %>
+							<%= image_tag (User.first.image), { height: '128', width: '128', class: "img-rounded"} %>
 							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
@@ -125,6 +125,7 @@
 					<i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;&nbsp;<%= User.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
+							<%= image_tag (User.first.image), { height: '128', width: '128', class: "img-rounded"} %>
 							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
@@ -136,6 +137,7 @@
 					<i class="fa fa-industry fa-lg"></i>&nbsp;&nbsp;&nbsp;<%= Industry.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
+							<%= image_tag (User.first.image), { height: '128', width: '128', class: "img-rounded"} %>
 							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 						</p>
@@ -147,6 +149,7 @@
 					<%= Challenge.all.count %>
 					<div class="panel" style="height:50vh; width:80%; margin-top:18%;">
 						<p align="center">
+							<%= image_tag (User.first.image), { height: '128', width: '128', class: "img-rounded"} %>
 							<%= User.first.email %><br>
 							I was so happy I wanted to cry
 
