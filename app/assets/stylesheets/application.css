@@ -42,6 +42,43 @@ body{
     text-decoration: none;
 }
 
+.main_page_section_1, .main_page_section_6 {
+	height: 100vh;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	background-image: url("home.jpg");
+}
+
+.main_page_section_2 {
+	height: 100vh;
+	display: flex;
+	/*background-color: #8181F7;*/
+	background-image: url("slide 2.jpg");
+}
+
+.main_page_section_3 {
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	margin-top:8%;
+}
+
+.main_page_section_4 {
+	height: 100vh;
+	display: flex;
+	/*background-color: #8181F7;*/
+	background-image: url("slide 2.jpg");
+}
+
+.main_page_section_5 {
+	height: 100vh;
+	/*background-color: #8181F7;*/
+	background-image: url("ind_bg.png");
+}
+
+
+
 #preloader {
     background-color: #fff;
     height: 100%;
