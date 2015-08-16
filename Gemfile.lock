@@ -1,12 +1,7 @@
 GIT
-<<<<<<< HEAD
-  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: a889e2d6e6527b94234b88f0c6b635d29d8e7ae8
-=======
   remote: https://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: a889e2d6e6527b94234b88f0c6b635d29d8e7ae8
   branch: master
->>>>>>> 0b5c058d3c5c86ef4539f1799a9de0dd18d4c3e9
   specs:
     twitter-bootstrap-rails (3.2.1)
       actionpack (>= 3.1)
@@ -93,7 +88,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    execjs (2.5.2)
+    execjs (2.6.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.4.0.0)
@@ -174,7 +169,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.6)
+    rails-dom-testing (1.0.7)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
@@ -208,7 +203,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sprockets (3.3.0)
+    sprockets (3.3.1)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
