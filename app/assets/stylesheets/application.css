@@ -310,8 +310,9 @@ body{
 	float: left;
 	padding: 15px;
 	border-right-style: solid;
-    border-color: yellow;
+    border-color: #A4A4A4;
 	border-right-width: 2px;
+	color: white;
 	
 }
 
@@ -322,7 +323,7 @@ body{
 	padding: 20px;
 	
 	
-	color: #337ab7;
+	color: #FF4000;
 	
 }
 
@@ -332,7 +333,7 @@ body{
 	min-height:130px;
     border-bottom: solid;
     border-right: solid;
-    border-color: #ffff00;
+    border-color: #A4A4A4;
 	
 }
 .recently_played{
@@ -340,13 +341,14 @@ body{
 	min-height:100px;
 	float:left;
     border-right: solid;
-    border-color: #ffff00;
+    border-color: #A4A4A4;
 }
 
 .played_info{
 	width: 50%;
 	float:left;
 	margin-left: 20px;
+	color: white;
 }
 
 .progress_second_right{
@@ -354,7 +356,7 @@ body{
 	min-height:400px;
 	float: left;
 	padding: 15px;
-	color: #337ab7;
+	color: #FF4000;
 	
 }
 

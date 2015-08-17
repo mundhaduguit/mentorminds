@@ -1,22 +1,35 @@
 <div class="progress_main_div">
+	<div style="color:yellow;">
+		<%= image_tag current_user.image.url(:medium),class: "medium_circle_div" %>
+		<div style="margin-left:9%;color:white;">
+			<br>
+			<%= current_user_total_score %> Pts <!-- rendered from user_challenges helper file -->
+		</div>
+	</div>
+	<!--
 	<div class="progress_top">
+		
 		<div class="links_progress_top">
 		  <%= "Find challenge"%>&nbsp;&nbsp;
 		  <%= "Explore an industory"%>&nbsp;&nbsp;
 		  User : <%= current_user.user_name %>&nbsp;&nbsp;
-		</div>
+		</div>			
 	</div>
+
   <%= image_tag current_user.image.url(:medium),class: "circle_div" %> <div style="color:#ffffff;line-height:100px;font-size: 20px;margin-left:110px;"> 11000$</div>
+
+	--><br><br>
+
 	<div class="clearfix"></div>
 	<div class="progress_second">
 		<div class="progress_second_left">
-      <h4><%=link_to "Overview", progress_user_challenges_path %></h4>
+      		<p align="center"><h4>&nbsp;&nbsp;Certified <br> Challenges</h4></p>
 			</br>
-			<%=link_to "How you comapare", leader_board_user_challenges_path %>
+			<%#link_to "How you comapare", leader_board_user_challenges_path %>
 		</div>
 		<div class="progress_second_middle">
 			<div class="current_industry">
-				<%= "CURRENT INDUSTRY PROGRESS"%></br></br>
+				<font color="white"><%= "Current Industry Progress" %></font></br></br>
 				<% @user_current_industries.uniq.each_with_index do |user_current_industry,index| %>
 					<div class="clearfix"></div>
 					<% industry_category = find_industry_category(user_current_industry.industry_category_id) %>
@@ -29,7 +42,7 @@
 				<% end %>
 			</div>
 			<div class="recently_played">
-				<%= "RECENTLY PLAYED"%></br></br>
+				<font color="white"><%= "RECENTLY PLAYED"%></font></br></br>
 				<div class="circle_with_info">
 					<div class="circle_div" style="float: left"></div>
 					<div class="played_info">
@@ -39,7 +52,7 @@
 			</div>
 		</div>
 		<div class="progress_second_right">
-			<%= "INDUSTRIES ACCESSED"%></br></br>
+			<font color="white" align = "center">Industries<br> &nbsp;Accessed</font></br></br>
 			<% @user_accessed_industries.each do |user_accessed_industry| %>
 
 				    <%= link_to (image_tag user_accessed_industry.industry_category.image.url(:medium), class: "circle_div"), industry_category_path(user_accessed_industry.industry_category) %>

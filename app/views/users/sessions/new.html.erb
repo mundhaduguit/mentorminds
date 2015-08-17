@@ -182,9 +182,9 @@
 				<div class="col-md-6">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 						<div class="input-group">
-							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID" %>
+							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID",style: "text-align: center;" %>
 							<% if f.object.password_required? %>											    		
-								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password" %>
+								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password",style: "text-align: center;" %>
 							<% end -%>
 						</div>
 							<div class="input-group">
