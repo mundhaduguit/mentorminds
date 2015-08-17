@@ -307,7 +307,7 @@ body{
 	float: left;
 	padding: 15px;
 	border-right-style: solid;
-    border-color: yellow;
+    border-color: #A4A4A4;
 	border-right-width: 2px;
 	color: white;
 	
@@ -330,7 +330,7 @@ body{
 	min-height:130px;
     border-bottom: solid;
     border-right: solid;
-    border-color: #ffff00;
+    border-color: #A4A4A4;
 	
 }
 .recently_played{
@@ -338,7 +338,7 @@ body{
 	min-height:100px;
 	float:left;
     border-right: solid;
-    border-color: #ffff00;
+    border-color: #A4A4A4;
 }
 
 .played_info{
