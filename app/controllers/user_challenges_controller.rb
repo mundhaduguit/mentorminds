@@ -6,7 +6,10 @@ class UserChallengesController < ApplicationController
   # GET /user_challenges
   # GET /user_challenges.json
   def index
-
+    @user_pre_challenge = current_user.user_pre_challenges.where(:pre_challenge_id => params[:pre_challenge_id]).first
+    unless  @user_pre_challenge.present?
+      @user_pre_challenge = UserPreChallenge.new
+    end
     @pre_challenge = PreChallenge.find((params[:pre_challenge_id]).to_i);
     @user_challenges = Challenge.where(:pre_challenge_id => params[:pre_challenge_id])
 
@@ -39,6 +42,7 @@ class UserChallengesController < ApplicationController
   # GET /user_challenges/1
   # GET /user_challenges/1.json
   def show
+
   end
 
   # GET /user_challenges/new

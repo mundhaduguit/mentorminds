@@ -12,6 +12,7 @@
  *
  *= require bootstrap.min.css
  *= require font-awesome
+  *= require fileinput.min
  */
 
 .bg-progress{
@@ -255,14 +256,16 @@ body{
 	
 }
 .circle_div{
-	height: 60px;
-	width: 60px;
-	border-radius:30px;
-	border-style: solid;
-	border-width: 2px;
-	margin: 5px 0px 0px 20px;
-	float: left;
-	background-image: url("flower.jpg");
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border-style: solid;
+
+    border-width: 3px;
+    margin: 3px 0px 0px 0px;
+    float: left;
+    border-color: yellow;
+    padding: 3px;
 }
 .small_circle_div{
 	height: 30px;
@@ -398,7 +401,6 @@ body{
 
 .challenges_div{
     text-align: center;
-	background-image: url("fc_bg.png") ;
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100%;
@@ -427,10 +429,10 @@ body{
 }
 
 .date {
-	 border-radius: 10px;
+
 	width: 50px;
-	color: white;
-	background-color: #2e6da4;
+
+
 	float: right;
 }
 
@@ -556,4 +558,108 @@ body{
 /* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
+}
+
+
+.dashboard_background{
+    width: 100%;
+    height: 100%;
+}
+
+.part1{
+    float: left;
+    background-image: url("line.png");
+    background-position-x: center;
+    height: 90%;
+    width: 20%;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+}
+
+.buddy-0{
+    margin-left: 35%;
+    height: 12%;
+    width: 30%;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #ffffff;
+    border:solid;
+    border-color: grey;
+
+}
+.buddy{
+   margin-left: 40%;
+    height: 8%;
+    width: 20%;
+    margin-top: 10%;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #FA5858;
+    background-image: url("buddy1.png");
+    background-repeat: no-repeat;
+}
+
+.buddy-2{
+    margin-left: 40%;
+    height: 8%;
+    width: 20%;
+    margin-top: 20%;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #81BEF7;
+
+}
+
+.buddy-3{
+    margin-left: 40%;
+    height: 8%;
+    width: 20%;
+    margin-top: 20%;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #8AC007;
+
+}
+
+.buddy-4{
+    margin-left: 40%;
+    height: 8%;
+    width: 20%;
+    margin-top: 10%;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #8AC007;
+
+}
+.part2{
+
+}
+.part2{
+    padding-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    float: left;
+}
+.part3{
+    padding-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    float: left;
+}
+.part4{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    float: left;
+}
+.new_user_pre_challenge{
+    height: 100%;
+    width: 100%;
+}
+.edit_user_pre_challenge{
+    height: 100%;
+    width: 100%;
 }

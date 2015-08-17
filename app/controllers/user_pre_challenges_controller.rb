@@ -54,15 +54,16 @@ class UserPreChallengesController < ApplicationController
   # PATCH/PUT /user_pre_challenges/1
   # PATCH/PUT /user_pre_challenges/1.json
   def update
-    respond_to do |format|
+
       if @user_pre_challenge.update(user_pre_challenge_params)
-        format.html { redirect_to @user_pre_challenge, notice: 'User pre challenge was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_pre_challenge }
+        redirect_to progress_user_challenges_path
       else
+        respond_to do |format|
         format.html { render :edit }
         format.json { render json: @user_pre_challenge.errors, status: :unprocessable_entity }
+        end
       end
-    end
+
   end
 
   # DELETE /user_pre_challenges/1
@@ -96,6 +97,6 @@ class UserPreChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_pre_challenge_params
-      params.require(:user_pre_challenge).permit(:user_id, :pre_challenge_id)
+      params.require(:user_pre_challenge).permit(:user_id, :pre_challenge_id,:score)
     end
 end

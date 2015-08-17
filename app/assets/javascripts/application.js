@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require pixlr
+//= require fileinput.min
+
 $( document ).ready(function() {
       pixlr.settings.target = 'http://localhost:3000';
       pixlr.settings.exit = 'http://localhost:3000';
@@ -37,16 +39,17 @@ $( document ).ready(function() {
     });
     i=1
     setInterval(function() {
-        score = $(".score").text();
+        score = $(".score").val();
         first_date = parseInt($(".score").attr("first_day"))
 
         current_day =  parseInt($("."+i+"_date").text())
-        if(first_date < current_day)
+        if(first_date < current_day && score > 0)
         {
 
             score = score - 100;
         }
-        $(".score").text(score);
+        $(".score").val(score);
+        $("."+(i-1)+"_date").removeClass("high");
         $("."+i+"_date").addClass("high");
         i=i+1
     }, 10 * 1000); // 60 * 1000 milsec

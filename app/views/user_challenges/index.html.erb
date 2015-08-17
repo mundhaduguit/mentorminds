@@ -1,106 +1,122 @@
 
-<br>
+<%= form_for @user_pre_challenge, class:"user_pre_challenge_form" do |f| %>
+<% if @user_challenges.present? %>
+<div class="dashboard_background" >
+  <div class="part1">
+    <div class="buddy-0" ></div>
+    <div class="buddy"></div>
+    <div class="buddy"></div>
+    <div class="buddy"></div>
+    <div class="buddy-2" >
+      <a href="#" data-toggle="modal" data-target="#text_buddy">
 
+        <%= image_tag ("buddy2.png") %><br><br>
+      </a>
+    </div>
+    <div class="buddy-3">
+      <a href="#" data-toggle="modal" data-target="#video_link" >
+        <%= image_tag "play.png", style: "padding-left:15px;padding-top:4px" %><br><br>
+      </a>
+    </div>
+    <div class="buddy-4">
+      <a href="javascript:pixlr.overlay.show();" >
+        <%= image_tag ("tool.png"), alt: "Pixlr" %><br><br>
+      </a>
+    </div>
+  </div>
 
-  <% if @user_challenges.present? %>
+  <div class = "part2">
+<%= f.text_field :score ,:readonly => true, :first_day => @pre_challenge.first_date , style: "height:35px;font-size:20px;font-weight:bold;",:value => "1100" , class: "score" %>
+   </div>
+   <div class="part3">
 
-    <div style = "margin-left: 200px;color: #0066cc;font-size: 20px;font-weight: bold;float: left;">Score:</div>
-    <div class="score" first_day = "<%= @pre_challenge.first_date %>" style = "color: #0066cc;font-size: 20px;font-weight: bold;float: left;">1000 </div>
-    <div style = "color: #0066cc;font-size: 20px;font-weight: bold;">$</div>
-    <div class="challenges_main_div" align="center">
+    <div class="move-arrow prev" >
+      <i class="fa fa-chevron-left"></i>
+    </div>
 
-         <div class="tools_and_persons">
-          <br>
-            <a href="#" data-toggle="modal" data-target="#video_link" >
-              <%= image_tag ("Gamification-Tab.png") %><br><br>
-            </a>
+    <% @user_challenges.each_with_index do |user_challenge,i| %>
 
-            <a href="#" data-toggle="modal" data-target="#video_link2">
-              
-              <%= image_tag ("Gamification-Tab.png") %><br><br>
-            </a>
-            
-            <a href="#" data-toggle="modal" data-target="#video_link3">
-              
-              <%= image_tag ("Gamification-Tab.png") %><br><br>
-            </a>
+        <% if i==0 %>
 
-             <a href="#" data-toggle="modal" data-target="#text_buddy">
-              
-              <%= image_tag ("3.png") %><br><br>
-            </a>
-          
-            
-
-          <a href="javascript:pixlr.overlay.show();" >
-              <%= image_tag ("2.png"), alt: "Pixlr" %><br><br>
-          </a>
-        </div>
-
-        <div class="date" align="center">
-          <br>
-          <% (1..30).each do |date| %>
-            <div class="<%= date %>_date">
-              <%= date %><br>
+            <div class="challenges_div first current active_slide" style="float: left;">
+              <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
             </div>
-          <% end %>
-        </div>
+        <%else%>
+            <div class="challenges_div" style="float: left;display: none;">
+              <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
+            </div>
+        <% end %>
+    <% end %>
+    <div class="move-arrow next">
+      <i class="fa  fa-chevron-right"></i>
+    </div>
+     <%= f.file_field :upload, :class => "file" %><br>
+     <div align="center"><%= f.submit "SUBMIT", class: "btn btn-primary"%></div>
+  </div>
 
-      <div style="height: 100%;margin-left: auto;margin-right: auto;width: 55%;">
-        <div class="move-arrow prev" >
-          <i class="fa  fa-chevron-left"></i>
-        </div>
-
-        <% @user_challenges.each_with_index do |user_challenge,i| %>
-
-          <% if i==0 %>
-
-              <div class="challenges_div first current active_slide" style="float: left;">
-                <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
-              </div>
-          <%else%>
-                <div class="challenges_div" style="float: left;display: none;">
-                  <%= render partial: 'user_challenge', locals: {user_challenge: user_challenge} %>
-                </div>
-          <% end %>
+  <div class = "part4">
+    <div class="date" align="center">
+      <br>
+      <% (1..30).each do |date| %>
+          <div class="<%= date %>_date">
+            <%= date %><br>
+          </div>
       <% end %>
-      <div class="move-arrow next">
-        <i class="fa  fa-chevron-right"></i>
-      </div>
     </div>
-    </div>
-  <% end %>
+  </div>
+
+</div>
+
+
+</div>
+
+<%end%>
+
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="modal fade" id="video_link" role="dialog" aria-labelledby="video_linkLabel" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-body">
-        <div class="clearfix"></div>
-        <div class="clearfix"></div>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/yJOqiZEU-bg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
+    <div class="modal-body">
+      <div class="clearfix"></div>
+      <div class="clearfix"></div>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/yJOqiZEU-bg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
   </div>
 </div>
 
 <div class="modal fade" id="video_link2" role="dialog" a;ria-labelledby="video_linkLabel2" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-body">
-        <div class="clearfix"></div>
-        <div class="clearfix"></div>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/I8ik8pDTgJE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
+    <div class="modal-body">
+      <div class="clearfix"></div>
+      <div class="clearfix"></div>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/I8ik8pDTgJE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
   </div>
 </div>
 
 <div class="modal fade" id="video_link3" role="dialog" aria-labelledby="video_linkLabel3" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-body">
-        <div class="clearfix"></div>
-        <div class="clearfix"></div>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/_gCwCOhMcog?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
+    <div class="modal-body">
+      <div class="clearfix"></div>
+      <div class="clearfix"></div>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/_gCwCOhMcog?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
   </div>
 </div>
 <!--
