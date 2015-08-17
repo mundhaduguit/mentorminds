@@ -309,6 +309,7 @@ body{
 	border-right-style: solid;
     border-color: yellow;
 	border-right-width: 2px;
+	color: white;
 	
 }
 
@@ -319,7 +320,7 @@ body{
 	padding: 20px;
 	
 	
-	color: #337ab7;
+	color: #FF4000;
 	
 }
 
@@ -344,6 +345,7 @@ body{
 	width: 50%;
 	float:left;
 	margin-left: 20px;
+	color: white;
 }
 
 .progress_second_right{
@@ -351,7 +353,7 @@ body{
 	min-height:400px;
 	float: left;
 	padding: 15px;
-	color: #337ab7;
+	color: #FF4000;
 	
 }
 
