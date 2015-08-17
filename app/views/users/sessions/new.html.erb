@@ -15,20 +15,20 @@
 				<div class="col-md-6">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 						<div class="input-group">
-							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID" %>
-							<% if f.object.password_required? %>											    		
-								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password" %>
+							<%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "Email-ID",style: "margin-bottom:10px;text-align: center;" %>
+							<% if f.object.password_required? %>
+								<%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "Password",style: "text-align: center;" %>
 							<% end -%>
 						</div>
 							<div class="input-group">
 								<% if devise_mapping.rememberable? -%>
-									<div class="field" align="center">
-										<label>
+									<div class="field" align="center" style="width:360px; ">
+										<!--<label>
 											<%= f.check_box :remember_me %>
 												Remember me
 			                             </label>
-			                             <br>
-			                            <a href="#" style="color:blue;">Forgot password?</a>
+			                             <br>-->
+			                            <a href="#" style="color:grey;text-align: center;"  >Forgot password?</a>
 									</div>
 								<% end -%>
 							</div>
@@ -36,10 +36,10 @@
 																			  	
 							        <!-- Button -->
 							
-							    <div class="col-sm-12 controls" style="margin-bottom:20px">
+							    <div class="col-sm-12 controls" style="margin-bottom:20px;width:330px;" align="center">
 							            <%= f.submit "Log in Now!",class: "btn btn-success" %>
 							            
-							            <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a>
+							            <!-- <a id="btn-fblogin" href="<%= new_user_registration_url%>" class="btn btn-primary">Sign up</a> -->
 							     </div>
 							</div>
 														 
