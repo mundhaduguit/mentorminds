@@ -1,3 +1,12 @@
+<style>
+  body{
+      color: #ffffff;
+  }
+  tr:nth-child(odd) {
+      color: #000000;
+  }
+</style>
+
 <div class="container">
   <div class="row">
     <div class="col-md-offset-6 col-md-2">
@@ -9,11 +18,23 @@
     <div class="col-md-2">
       User : <%= current_user.user_name %>
     </div>
-    <div class="col-md-12">&nbsp;<br>&nbsp;</div>
+
+    <div class="col-md-12" style="font-size: 20px;line-height: 100px;"><%= image_tag current_user.image.url(:medium),class: "circle_div" %> &nbsp;<%rank_position = (current_user.get_rank+1) %><%= rank_position %> Rnk<br></div>
+
     <div class="col-md-2">
+      <br>
+      <br>
+
       <%=link_to "Overview", progress_user_challenges_path %><br>
-      <b><%=link_to "How you comapare", leader_board_user_challenges_path %></b>
+      <b><%=link_to "Comapare", leader_board_user_challenges_path %></b>
+      <br><br><br><br><br>
+      <br>
+      <br><br><br><br><br>
+      <br>
+
+      <%= image_tag "chain.png" %>
     </div>
+
     <div class="col-md-8">
       <h4>MentorMind Leaderboard<br></h4>
       <br/>
@@ -28,35 +49,45 @@
           </thead>
           <% counter = 0 %>
           <% rank_position = 0 %>
-          <% @user_answers.each do |user_answer| %>
-            <% user = User.where(:id => user_answer.user_id).first %>
+          <tbody>
+          <% UserPreChallenge.get_all_scores.each do |user,score| %>
+
             <% counter +=1 %>
             <% if user.id == current_user.id %>
               <% rank_position = counter %>
             <% end -%>
-            <tbody>
               <tr>
                 <td><%= user.user_name %></td>
                 <td><%= user.collage %></td>
                 <td><%= user.email %></td>
-                <td><%= user_answer.marks %></td>
+                <td><%= score %></td>
               </tr>
-            </tbody>
+
           <% end %>
+          </tbody>
         </table>
-      <% total_count = @user_answers.size %>
+      <% total_count = User.all.size %>
+
       <% percenatge = rank_position == 0 ? 0 : (((total_count - rank_position)*100)/total_count) unless total_count==0%>
-      
-      100% Percentage of MentorMind Users you Outrank
+      <div style="width: 50%;height:20px;background-color: #ffffff;float: left">
+        <div style="width: <%= percenatge %>%;background-color: #0066cc;height: 100%;"></div>
+      </div>
+      &nbsp
+      <%=percenatge%>% Percentage of MentorMind Users you Outrank
       <div class="lb_complete_div">
-        <div class="lb_percentage_div" style="width: <%= percenatge %>%"></div>
+
       </div>
       
-      <% rank_percenatge = ((rank_position*100)/total_count) unless total_count==0%>
+     <br>
+
       <div class="clearfix"></div>
-      Your Rank among all MentorMind Users on Marketing <%= rank_position == 0 ? "" : rank_position %>
+      <div style="width: 50%;height:20px;background-color: #ffffff;float: left">
+        <div style="width: <%= percenatge %>%;height: 100%;"></div>
+      </div>
+      &nbsp
+      Your Rank among all MentorMind Users on Marketing
       <div class="lb_complete_div">
-        <div class="lb_percentage_div" style="width: <%= rank_percenatge %>%"></div>
+
       </div>
       <!--<div class="col-md-6" style="background-color: #269abc;padding: 2px;">&nbsp;<br /></div>
       <div class="col-md-6">100% Percentage of MentorMind Users you Outrank</div>

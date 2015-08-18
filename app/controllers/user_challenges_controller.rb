@@ -97,7 +97,8 @@ class UserChallengesController < ApplicationController
   
   def progress
 
-    @user_current_industries = UserAnswer.joins(user_challenge: {challenge: {pre_challenge: :industry}}).where("user_answers.user_id = ? AND status IN (?) ", current_user.id, ['done', 'in progress']).select("industries.industry_category_id as industry_category_id").order("user_answers.updated_at DESC").uniq
+    @user_current_industries = current_user.user_pre_challenges.last.pre_challenge.industry.industry_category if current_user.user_pre_challenges.present?
+    @user_current_industries = @user_current_industries
     @user_accessed_industries = UserAccessedIndustry.get_user_accessed_industries(current_user.id)
 
   end

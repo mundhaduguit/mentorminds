@@ -264,9 +264,36 @@ body{
     border-width: 3px;
     margin: 3px 0px 0px 0px;
     float: left;
-    border-color: yellow;
+    border-color: #ffff00;
     padding: 3px;
 }
+.circle_div_new{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border-style: solid;
+
+    border-width: 3px;
+    margin: 3px 0px 0px 0px;
+    float: left;
+    border-color: #d9534f;
+    padding: 3px;
+}
+
+.circle_div_blue{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border-style: solid;
+
+    border-width: 3px;
+    margin: 3px 0px 0px 0px;
+    float: left;
+    border-color: #0066cc;
+    padding: 3px;
+}
+
+
 .small_circle_div{
 	height: 30px;
 	width: 30px;
@@ -330,7 +357,7 @@ body{
 .current_industry{
 	width:100%
 	float:left;
-	min-height:130px;
+    min-height: 170px;
     border-bottom: solid;
     border-right: solid;
     border-color: #A4A4A4;

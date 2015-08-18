@@ -61,7 +61,10 @@ new_with_session class method in our User model
     end
   end
 
-
+  def get_rank
+    scores =UserPreChallenge.get_all_scores_by_id
+    Hash[scores.sort].keys.index(self.id)
+  end
   private
     def set_flag
       self.flag = true  

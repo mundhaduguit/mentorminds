@@ -56,7 +56,7 @@
                                   <br><br>
                                   <% @companies.each do |company| %>
                                       <%= link_to "#{ image_tag company.image.url(:thumb)}".html_safe, user_pre_challenges_path(:company_id => company.id)%>
-                                      <%= link_to "#{ image_tag company.image.url(:thumb)}".html_safe, user_pre_challenges_path(:company_id => company.id)%>
+
                                   <% end %>
                               <% end %>
                             </div>
